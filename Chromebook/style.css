@@ -1,0 +1,57 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .lockScreen {
+    background-color: lightBlue;
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .signUp {
+    position: absolute;
+    margin-top: calc(50vh - 175px);
+    margin-left: calc(50vw - 162.5px);
+    width: 325px;
+    height: 350px;
+    background-color: gray;
+    border-radius: 25px;
+    text-align: center;
+    color: white;
+  }
+  
+  .signUpUser {
+    border: 0px;
+    font-size: 20px;
+  }
+  
+  .signUpPass {
+    border: 0px;
+    font-size: 20px;
+  }
+  
+  .signUpSub {
+    border: 0px;
+    font-size: 20px;
+  }
+  
+  .brake-large {
+    width: 100%;
+    height: 50px;
+  }
+  
+  .brake-medium {
+    width: 100%;
+    height: 40px;
+  }
+  
+  .brake-small {
+    width: 100%;
+    height: 20px;
+  }
+  
+  .signUp hr{
+    width: 90%;
+    border: 1px solid white;
+  }

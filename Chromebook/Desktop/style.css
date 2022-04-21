@@ -1,0 +1,490 @@
+:root {
+  --menuHeight: 50px;
+}
+
+.body {
+  margin: 0;
+  font-family: 'Noto Sans', sans-serif;
+  background-color: #061119;
+  overflow: hidden;
+}
+
+.body-debug {
+  margin: 0;
+  font-family: 'Noto Sans', sans-serif;
+  background-color: #061119;
+  overflow: show;
+}
+
+.desktop {
+  background-color: #061119;
+}
+
+.background {
+  width: 100vw;
+  height: 100vh;
+  object-fit:cover;
+}
+
+/* Desktop Menu */
+.deskMenu {
+  width: 100vw;
+  height: var(--menuHeight);
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.25);
+  margin-top: calc(var(--menuHeight) / -1);
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+
+/* Search Apps SVG */
+.chromeApps {
+  float: left;
+  cursor: pointer;
+}
+
+/* Search Apps Button (Meta action) */
+.searchApps-Closed {
+  width: 100vw;
+  height: var(--menuHeight);
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0);
+  color: rgba(0, 0, 0, 0);
+  margin-top: calc(var(--menuHeight) / -1);
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  transition-duration: 0.5s;
+  visibility: hidden;
+}
+
+.searchApps-Open {
+  width: 100vw;
+  height: calc(var(--menuHeight) + 232px);
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.25);
+  color: rgba(0, 0, 0, 1);
+  margin-top: calc(calc(var(--menuHeight) + 232px) / -1);
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  transition-duration: 0.5s;
+  visibility: show;
+}
+
+.searchApps-Center {
+  width: 560px;
+  height: 175px;
+  margin-left: calc(50% - 280px);
+  margin-top: 0px;
+  text-align: center;
+}
+
+.searchApps-Chrome {
+  width: 560px;
+  height: 50px;
+  background-color: white;
+  margin-left: calc(50% - 280px);
+  margin-top: 80px;
+  border-radius: 50px;
+}
+
+
+
+/* Pinned Apps */
+.desktopMenu-Center {
+    display: inline-block;
+    margin-left: calc(50vw - calc(var(--menuHeight) + 20px));/* desktop menu apps */
+    margin-top: calc(calc(var(--menuHeight) / -1) + 38px);
+    width:100px;
+}
+
+.desktopMenu-Right {
+  float:right;
+  width: auto;
+  margin-right: 5px;
+}
+
+.desktopMenu-More {
+  background-color: rgba(255, 255, 255, 0.25);
+  width: 185px;
+  height: calc(var(--menuHeight) - 12px);
+  margin-top: calc(var(--menuHeight) - 62px);
+  border-radius: 50px;
+}
+
+.desktopMenu-More-Notif {
+  height: calc(var(--menuHeight) - 20px);
+  margin-top: calc(var(--menuHeight) - 46px);
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.desktopMenu-More-Divider {
+  height: calc(var(--menuHeight) - 23px);
+  border: solid 0.1px rgba(255, 255, 255, 0.50);
+  width: 0.1px;
+  margin-top: calc(var(--menuHeight) - 84px);
+  margin-left: 40px;
+}
+
+.desktopMenu-More-Wifi {
+  height: calc(var(--menuHeight) - 20px);
+  transform: translate(0px, -37px);
+  margin-left: 45px;
+  cursor: pointer;
+}
+
+.desktopMenu-More-Batt {
+  height: calc(var(--menuHeight) - 20px);
+  transform: translate(0px, -37px);
+  margin-left: 0px;
+  cursor: pointer;
+}
+
+.desktopMenu-More-Time {
+  margin-top: -68px;
+  margin-left: 110px;
+  color: white;
+  cursor: pointer;
+}
+
+.desktopMenu-More-Options-Closed {
+  margin-top: -500px;
+  margin-left: calc(100% - 368px);
+  width: 363px;
+  height: 439px;
+  background-color: rgba(255, 255, 255, 0);
+  position: absolute;
+  color: rgba(255, 255, 255, 0);
+  border-radius: 15px;
+  transition-duration: 0.25s;
+}
+
+.desktopMenu-More-Options-Open {
+  margin-top: -500px;
+  margin-left: calc(100% - 368px);
+  width: 363px;
+  height: 439px;
+  background-color: rgba(255, 255, 255, 0.25);
+  position: absolute;
+  color: white;
+  border-radius: 15px;
+  transition-duration: 0s;
+}
+
+#desktopMenu-More-Options-Body {
+  margin: 10px;
+}
+
+.desktopMenu-More-Options-Acc-Closed {
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 25px;
+  width: 50px;
+  height: 50px;
+  background-image: url("");
+  object-fit: none;
+  cursor: pointer;
+  transition-duration: 0.25s;
+  position: fixed;
+}
+
+.desktopMenu-More-Options-Acc-Open {
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: 25px;
+  width: 50px;
+  height: 50px;
+  background-image: url("img/account_circle_white_24dp.png");
+  object-fit: none;
+  cursor: pointer;
+  transition-duration: 0s;
+  position: fixed;
+}
+
+.desktopMenu-More-Options-SignOut-Closed {
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 25px;
+  width: 75px;
+  height: 35px;
+  cursor: pointer;
+  margin-left: 0px;
+  margin-top: 7.5px;
+  transition-duration: 0.25s;
+  position: fixed;
+  font-size: 15px;
+}
+
+.desktopMenu-More-Options-SignOut-Open {
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: 25px;
+  width: 75px;
+  height: 35px;
+  cursor: pointer;
+  margin-left: 60px;
+  margin-top: 7.5px;
+  transition-duration: 0s;
+  position: fixed;
+  font-size: 15px;
+}
+
+.desktopMenu-More-Options-Power-Closed {
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 25px;
+  width: 75px;
+  height: 35px;
+  background-image: url("");
+  object-fit: cover;
+  cursor: pointer;
+  margin-left: 0px;
+  margin-top: 7.5px;
+  transition-duration: 0.25s;
+  position: fixed;
+  font-size: 15px;
+}
+
+.desktopMenu-More-Options-Power-Open {
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: 25px;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  background-image: url("img/outline_power_settings_new_white_35px.png");
+  object-fit: ;
+  margin-left: 145px;
+  margin-top: 7.5px;
+  transition-duration: 0s;
+  position: fixed;
+  font-size: 15px;
+}
+
+.desktopMenu-More-Options-Lock-Closed {
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 25px;
+  width: 75px;
+  height: 35px;
+  background-image: url("");
+  object-fit: cover;
+  cursor: pointer;
+  margin-left: 0px;
+  margin-top: 7.5px;
+  transition-duration: 0.25s;
+  position: fixed;
+  font-size: 15px;
+}
+
+.desktopMenu-More-Options-Lock-Open {
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: 25px;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  background-image: url("img/outline_power_settings_new_white_35px.png");
+  object-fit: ;
+  margin-left: 190px;
+  margin-top: 7.5px;
+  transition-duration: 0s;
+  position: fixed;
+  font-size: 15px;
+}
+
+.chromeApp {
+  height: calc(var(--menuHeight) - 12px);
+  cursor: pointer;
+}
+
+.window-App {
+  border: 1px solid black;
+  width: 100vw;
+  height: calc(100vh - var(--menuHeight));
+  position: absolute;
+  display: none;
+  background-color: white;
+}
+
+.window-App .window-Chrome {
+  border: 1px solid white;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.window-App .window-Chrome iframe {
+  width: 100%;
+  height: calc(100% - var(--menuHeight));
+}
+
+.window-Chrome-Logo {
+  width: 272px;
+  margin-left: calc(50vw - 136px);
+  margin-top: 130px;
+}
+
+.window-Chrome-Input {
+  height: calc(var(--menuHeight) - 12px);
+  width: 560px;
+  cursor: pointer;
+  margin-top: -50px;
+  margin-left: calc(50vw - 680px);
+  border-radius: 50px;
+  position: absolute;
+  border: solid 1px rgba(0, 0, 0, 0.125);
+  background: rgba(0, 0, 0, 0.0125);
+  font-size: 20px;
+}
+
+.window-Chrome-SearchImg {
+  cursor: pointer;
+  transform: translateY(-40px);
+  margin-left: calc(50vw - 690px);
+}
+
+.searchChromeApp {
+  height: calc(var(--menuHeight) - 12px);
+  cursor: pointer;
+  margin-left: -510px;
+  margin-top: 5px;
+}
+
+.searchChromeInput {
+  height: calc(var(--menuHeight) - 12px);
+  width: 24.75em;
+  cursor: pointer;
+  transform: translate(10px, 54px);
+  margin-top: -50px;
+  border-radius: 50px;
+  position: absolute;
+  border: solid 1px rgba(0, 0, 0, 0.25);
+  background: rgba(0, 0, 0, 0.125);
+  font-size: 20px;
+}
+
+.searchApps-Center-Drag {
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+  width: 32px;
+  height: 32px;
+}
+
+/* background rightClick */
+.rightClick {
+  display: none;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+}
+
+/* Settings */
+.settings-table td {
+  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Noto Sans', sans-serif;
+  cursor: pointer;
+}
+
+.settings-table tr:hover {
+  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Noto Sans', sans-serif;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.settings-table {
+  width: 200px;
+  background-color: white;
+  border-radius: 5px;
+  border-collapse: collapse;
+}
+
+.settings {
+  display: none;
+  border-radius: 5px;
+  background-color: white;
+  width: 1200px;
+  height: 750px;
+  position: absolute;
+  margin-left: calc(50vw - 600px);
+  margin-top: calc(50vh - 375px);
+}
+
+.currentImg {
+  width: 220px;
+  margin: 90px 150px;
+  border-radius: 10px;
+}
+
+.selectImg {
+  width: 150px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.window-Menu {
+  margin-left: calc(100% - 90px);
+}
+
+.window-Menu td {
+  width: 10px;
+  height: 20px;
+  border-radius: 100px;
+}
+
+.window-Menu td:hover {
+  background-color: rgba(0, 0, 0, 0.125);
+}
+
+.settings-option {
+  cursor: pointer;
+}
+
+/* Wallpaper */
+.wallpaper-options {
+  border: 1px solid black;
+  max-width: 100px;
+  overflow: hidden;
+}
+
+.wallpaper-outer {
+  margin-left: calc(1100px - 79%);
+  height: 400px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+/* Grid */
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  width: 1100px;
+}
+
+.grid-item {
+  font-size: 30px;
+  text-align: center;
+  width: 150px;
+  height: 150px
+}
+
+
+/* Image Upload  */
+.form-input-div {
+  border: 1px solid black;
+  border-radius: 10px;
+  text-align: center;
+  width: 300px;
+  height: 150px;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.file-input {
+  color: white transparent;
+}
+
+/* hoverMenu */
+.hoverMenu-Text {
+  width: auto;
+  min-width: 10px;
+  max-width: 160px;
+  height: auto;
+  position: absolute;
+  margin-top: 0px;
+  margin-left: 0px;
+  background-color: rgba(255,255,255, 0.9);
+  color: gray;
+  border: 0.25px solid black;
+}

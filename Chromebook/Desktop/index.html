@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Computer Simulator</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+		<script src="script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body id="body" class="body" onload="main();" onmousemove="main();">
+    <div id="rightClick" class="rightClick">
+      <table class="settings-table">
+        <tr onclick="autohideShelf();">
+          <td>
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0zm0 0h24v24H0V0zm0 0h24v24H0V0zm0 0h24v24H0V0z" fill="none"/><path d="M12 6c3.79 0 7.17 2.13 8.82 5.5-.59 1.22-1.42 2.27-2.41 3.12l1.41 1.41c1.39-1.23 2.49-2.77 3.18-4.53C21.27 7.11 17 4 12 4c-1.27 0-2.49.2-3.64.57l1.65 1.65C10.66 6.09 11.32 6 12 6zm-1.07 1.14L13 9.21c.57.25 1.03.71 1.28 1.28l2.07 2.07c.08-.34.14-.7.14-1.07C16.5 9.01 14.48 7 12 7c-.37 0-.72.05-1.07.14zM2.01 3.87l2.68 2.68C3.06 7.83 1.77 9.53 1 11.5 2.73 15.89 7 19 12 19c1.52 0 2.98-.29 4.32-.82l3.42 3.42 1.41-1.41L3.42 2.45 2.01 3.87zm7.5 7.5l2.61 2.61c-.04.01-.08.02-.12.02-1.38 0-2.5-1.12-2.5-2.5 0-.05.01-.08.01-.13zm-3.4-3.4l1.75 1.75c-.23.55-.36 1.15-.36 1.78 0 2.48 2.02 4.5 4.5 4.5.63 0 1.23-.13 1.77-.36l.98.98c-.88.24-1.8.38-2.75.38-3.79 0-7.17-2.13-8.82-5.5.7-1.43 1.72-2.61 2.93-3.53z"/></svg>
+          </td>
+          <td>
+            Autohide Shelf
+          </td>
+          <td>
+            
+          </td>
+        </tr>
+        <tr onclick="changeShelfPos();">
+          <td>
+            <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><g><rect fill="none" height="24" width="24"/></g><g><path d="M2,6v12h2V8h10v10h2v-2h4v2h2V6H2z M20,8v2h-4V8H20z M16,14v-2h4v2H16z"/></g></svg>
+          </td>
+          <td>
+            Shelf Position
+          </td>
+          <td>
+            <!--&#8250;-->
+          </td>
+        </tr>
+        <tr onclick="openWallpaper();">
+          <td>
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-4.86 8.86l-3 3.87L9 13.14 6 17h12l-3.86-5.14z"/></svg>
+          </td>
+          <td>
+            Set Wallpaper
+          </td>
+          <td>
+            
+          </td>
+        </tr>
+      </table>
+    </div>
+    
+    <div id="settingsWallpaper" class="settings">
+      <div id="windowMenu" class="window-Menu">
+        <table>
+          <tr>
+            <td id="settingsMinimize" class="settings-option" onmousedown="closeWallpaper();" onmouseover="svgHover('settingsExit')" onmousemove="svgLeave('settingsExit')">
+              <!--<svg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 0 24 24' width='24px' fill='#000000'><path d='M0 0h24v24H0V0z' fill='none'/><path d='M6 19h12v2H6v-2z'/></svg>-->
+              <img id="settingsMinimize_img" src="img/minimize_black_24dp.svg">
+            </td>
+            <td id="settingsFull" class="settings-option" onclick="" onmouseover="svgHover('settingsFull')" onmousemove="svgLeave('settingsFull')">
+              <!--<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>-->
+              <img id="settingsFull_img" src="img/fullscreen_black_24dp.svg">
+            </td>
+            <td id="settingsExit" class="settings-option" onmousedown="closeWallpaper();" onmouseover="svgHover('settingsExit')" onmousemove="svgLeave('settingsExit')">
+              <!--<btn><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg></btn>!-->
+              <img id="settingsExit_img" src="img/close_black_24dp.svg">
+            </td>
+          </tr>
+        </table>
+      </div>
+      <table>
+        <tr>
+          <td>
+            <img id="currentImg" class="currentImg" src="img/">
+          </td>
+          <td>
+            <h3 id="">Currently Set</h3>
+            <h2 id="currentImgName"></h2>
+          </td>
+        </tr>
+      </table>
+      <hr style="width: 75%; margin-top: -50px;">
+      <div class="wallpaper-outer">
+        <div class="grid-container">
+          <div class="grid-item">
+            <img id="selectImg1" class="selectImg" onclick="changeWallpaper('defaultWallpaper.jpg');" src="img/defaultWallpaper.jpg">
+          </div>
+          <div class="grid-item">
+            <img id="selectImg1" class="selectImg" onclick="changeWallpaper('patrick-tomasso-5hvn-2WW6rY-unsplash.jpg');" src="img/patrick-tomasso-5hvn-2WW6rY-unsplash.jpg">
+          </div>
+          <div class="grid-item">
+            <img id="selectImg1" class="selectImg" onclick="changeWallpaper('vadim-sherbakov-NQSWvyVRIJk-unsplash.jpg');" src="img/vadim-sherbakov-NQSWvyVRIJk-unsplash.jpg">
+          </div>
+          
+          <div class="grid-item">
+            <img id="selectImg1" class="selectImg" onclick="changeWallpaper('sora-sagano-4T_74DQL3qg-unsplash.jpg');" src="img/sora-sagano-4T_74DQL3qg-unsplash.jpg">
+          </div>
+          <div class="grid-item">
+            <img id="selectImg1" class="selectImg" onclick="changeWallpaper('lucas-calloch-P-yzuyWFEIk-unsplash.jpg');" src="img/lucas-calloch-P-yzuyWFEIk-unsplash.jpg">
+          </div>
+          <div class="grid-item">
+            <img id="selectImg1" class="selectImg" onclick="changeWallpaper('lucas-wesney-s-y2HJElONo-unsplash.jpg');" src="img/lucas-wesney-s-y2HJElONo-unsplash.jpg">
+          </div>
+          
+          <div class="grid-item">
+            <img id="selectImg1" class="selectImg" onclick="changeWallpaper('keith-misner-h0Vxgz5tyXA-unsplash.jpg');" src="img/keith-misner-h0Vxgz5tyXA-unsplash.jpg">
+          </div>
+          <div class="grid-item">
+            <img id="selectImg1" class="selectImg" onclick="changeWallpaper('boxed-water-is-better-3iiyde9Zj8A-unsplash.jpg');" src="img/boxed-water-is-better-3iiyde9Zj8A-unsplash.jpg">
+          </div>
+          <div class="grid-item">
+            <img id="selectImg1" class="selectImg" onclick="changeWallpaper('martin-sX4lxBWV0-A-unsplash.jpg');" src="img/martin-sX4lxBWV0-A-unsplash.jpg">
+          </div>
+          
+          <div class="grid-item">
+            <img id="selectImg1" class="selectImg" onclick="changeWallpaper('gradienta-bKESVqfxass-unsplash.jpg');" src="img/gradienta-bKESVqfxass-unsplash.jpg">
+          </div>
+          <div class="grid-item">
+            <img id="selectImg1" class="selectImg" onclick="changeWallpaper('milad-fakurian-CN2FEPXERRI-unsplash.jpg');" src="img/milad-fakurian-CN2FEPXERRI-unsplash.jpg">
+          </div>
+          <div class="grid-item">
+            <img id="selectImg1" class="selectImg" onclick="changeWallpaper('richard-horvath-_nWaeTF6qo0-unsplash.jpg');" src="img/richard-horvath-_nWaeTF6qo0-unsplash.jpg">
+          </div>
+          
+          <div class="grid-item">
+            <img id="selectImg1" class="selectImg" onclick="changeWallpaper('sandro-katalina-k1bO_VTiZSs-unsplash.jpg');" src="img/sandro-katalina-k1bO_VTiZSs-unsplash.jpg">
+          </div>
+          <div class="grid-item">
+            <img id="selectImg1" class="selectImg" onclick="changeWallpaper('tim-schmidbauer-TE_lOmkKq04-unsplash.jpg');" src="img/tim-schmidbauer-TE_lOmkKq04-unsplash.jpg">
+          </div>
+          <div class="grid-item">
+            <img id="selectImg1" class="selectImg" onclick="changeWallpaper('pgaberski-IDNBHZTamQ8-unsplash.jpg');" src="img/pgaberski-IDNBHZTamQ8-unsplash.jpg">
+          </div>
+          
+          <div class="grid-item">
+            <img id="selectImg1" class="selectImg" onclick="changeWallpaper('alexander-shatov-sIFCJHrUWPM-unsplash.jpg');" src="img/alexander-shatov-sIFCJHrUWPM-unsplash.jpg">
+          </div>
+          <div class="grid-item">
+            <img id="selectImg1" class="selectImg" onclick="changeWallpaper('alexander-shatov-niUkImZcSP8-unsplash.jpg');" src="img/alexander-shatov-niUkImZcSP8-unsplash.jpg">
+          </div>
+          <div class="grid-item">
+            <img id="selectImg1" class="selectImg" onclick="changeWallpaper('alexander-shatov-w-qqwn5O-4I-unsplash.jpg');" src="img/alexander-shatov-w-qqwn5O-4I-unsplash.jpg">
+          </div>
+          
+          
+          <div class="grid-item">
+            <div class="form-input-div">
+              <label for="file-ip-1">Upload</label>
+              <br>
+              <input type="file" class="file-input" id="file-ip-1" accept="image/*" onchange="showPreview(event);">
+            </div>
+          </div>
+          <div class="grid-item">
+          </div>
+          <div class="grid-item">
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="window-App" class="window-App" onclick="document.getElementById('searchApps').className = 'searchApps-Closed'">
+      <div id="window-Chrome" class="window-Chrome">
+        <div id="windowMenu" class="window-Menu">
+        <table>
+          <tr>
+            <td id="settingsMinimize" class="settings-option" onmousedown="closeWindowApp();" onmouseover="svgHover('settingsExit')" onmousemove="svgLeave('settingsExit')">
+              <!--<svg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 0 24 24' width='24px' fill='#000000'><path d='M0 0h24v24H0V0z' fill='none'/><path d='M6 19h12v2H6v-2z'/></svg>-->
+              <img id="settingsMinimize_img" src="img/minimize_black_24dp.svg">
+            </td>
+            <td id="settingsFull" class="settings-option" onclick="" onmouseover="svgHover('settingsFull')" onmousemove="svgLeave('settingsFull')">
+              <!--<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>-->
+              <img id="settingsFull_img" src="img/fullscreen_black_24dp.svg">
+            </td>
+            <td id="settingsExit" class="settings-option" onmousedown="closeWindowApp();" onmouseover="svgHover('settingsExit')" onmousemove="svgLeave('settingsExit')">
+              <!--<btn><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg></btn>!-->
+              <img id="settingsExit_img" src="img/close_black_24dp.svg">
+            </td>
+          </tr>
+        </table>
+      </div><!-- windowMenu -->
+        <div id="chrome-window" class="chrome-window">
+          <img id="window-Chrome-Logo" class="window-Chrome-Logo" src="img/googlelogo_color_272x92dp.png">
+          <div id="searchApps-Chrome" class="searchApps-Chrome">
+            <img id="window-Chrome-SearchImg" class="window-Chrome-SearchImg" onclick="openApp('Chrome');" src="img/search_black_24dp.svg">
+            <input id="window-Chrome-Input" class="window-Chrome-Input" type="input" onchange="googleSearch(this.value);">
+          </div>
+        </div>
+        <!--<iframe id="chrome-iframe" src="https://www.youtube.com/embed/uD4izuDMUQA?rel=0&modestbranding=1&autohide=1&showinfo=0&controls=0" frameborder="0" allowfullscreen></iframe>-->
+      </div><!-- window-Chrome -->
+    </div><!-- window-App -->
+    
+    <div id="desktop" class="desktop" onmouseenter="deskClick();" onmousedown="closeWallpaper();" onclick="rightClick('close');">
+      <img id="background" class="background" src="img/richard-horvath-_nWaeTF6qo0-unsplash.jpg" alt="defaultWallpaper">
+      <div id="searchApps" class="searchApps-Closed">
+        <div id="searchApps-Center" class="searchApps-Center">
+          <br>
+          <img id="searchApps-Center-Drag" class="searchApps-Center-Drag" src="img/keyboard_arrow_up_white_24dp.svg">
+          <div id="searchApps-Chrome" class="searchApps-Chrome">
+            <img id="searchChromeApp" class="searchChromeApp" onclick="openApp('Chrome');" src="img/search_black_24dp.svg">
+            <input id="searchChromeInput" class="searchChromeInput" type="input" onchange="googleSearch(this.value);">
+          </div>
+        </div><!-- searchApps-Center -->
+      </div><!-- searchApps -->
+      <div id="deskMenu" class="deskMenu">
+        <svg onclick="toggleSearchApps();" height="50px" id="chromeApps" class="chromeApps" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 480 480" shape-rendering="geometricPrecision" text-rendering="geometricPrecision"><ellipse rx="49.20027" ry="49.20027" transform="matrix(3.709339 0 0 3.709339 240 240)" fill="#fff" fill-opacity="0.25" stroke-width="0"/><ellipse rx="49.20027" ry="49.20027" transform="matrix(1.676191 0 0 1.676191 240 240)" fill="rgba(210,219,237,0)" stroke="#fff" stroke-width="3"/><ellipse rx="49.20027" ry="49.20027" transform="matrix(1.379491 0 0 1.379484 240 240)" fill="#fff" stroke="rgba(255,255,255,0)" stroke-width="3"/></svg>
+        <p id="log"></p>
+        <div id="desktopMenu-Center" class="desktopMenu-Center">
+          <img id="chromeApp" class="chromeApp" onclick="openApp('Chrome');" onmouseover="changeHoverMenu('Chrome <br> <b>Exit: Ctrl+W</b>', 'open')" onmouseleave="changeHoverMenu('', 'close')" src="img/Google_Chrome_icon_(September_2014).svg.png">
+        </div><!-- deskMenu-Center -->
+        <div id="desktopMenu-Right" class="desktopMenu-Right">
+          <div id="desktopMenu-More" class="desktopMenu-More" onmousedown="toggleMoreOptions();">
+            <img id="desktopMenu-More-Notif" class="desktopMenu-More-Notif" src="img/notifications_active_white_24dp.svg">
+            <hr id="desktopMenu-More-Divider" class="desktopMenu-More-Divider">
+            <img id="desktopMenu-More-Wifi" class="desktopMenu-More-Wifi" src="img/signal_wifi_4_bar_white_24dp.svg" onmouseover="hoverMenuWifiSet();" onmouseleave="changeHoverMenu('', 'close')">
+            <img id="desktopMenu-More-Batt" class="desktopMenu-More-Batt" src="img/battery_unknown_white_24dp.svg" onmouseover="hoverMenuBatteryGet();" onmouseleave="changeHoverMenu('', 'close')">
+            <p id="desktopMenu-More-Time" class="desktopMenu-More-Time" onmouseover="getDate('hoverMenu-Text')" onmouseleave="changeHoverMenu('', 'close')"></p>
+          </div><!-- deskMenu-More -->
+        </div><!-- desktopMenu-Right -->
+      </div><!-- deskMenu -->
+      <div id="desktopMenu-More-Options" class="desktopMenu-More-Options-Closed">
+        <div id="desktopMenu-More-Options-Body" class="desktopMenu-More-Options-Closed-Body">
+          <div id="desktopMenu-More-Options-Acc" class="desktopMenu-More-Options-Acc-Closed"></div>
+          <div id="desktopMenu-More-Options-SignOut" class="desktopMenu-More-Options-SignOut-Closed" onclick="signOut();"><div id="desktopMenu-More-Options-SignOut-Inner" class="desktopMenu-More-Options-SignOut-Closed-Inner" style="padding: 6px; width: 60px;">Sign out</div></div>
+          <div id="desktopMenu-More-Options-Power" class="desktopMenu-More-Options-Power-Closed" onclick="power();"></div>
+          <div id="desktopMenu-More-Options-Lock" class="desktopMenu-More-Options-Lock-Closed" onclick="lock();"></div>
+        </div>
+      </div><!-- desktopMenuMoreOptions -->
+    </div><!-- desktop -->
+    <div id="hoverMenu" class="hoverMenu">
+      <p id="hoverMenu-Text" class="hoverMenu-Text"></p>
+    </div>
+  </body>
+</html>

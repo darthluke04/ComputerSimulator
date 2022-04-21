@@ -1,0 +1,3 @@
+defaultWallpaper.jpg = https://unsplash.com/photos/phIFdC6lA4E;
+
+fonts google
