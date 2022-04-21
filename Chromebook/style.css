@@ -1,10 +1,25 @@
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
+    background-image: url("Desktop/img/richard-horvath-_nWaeTF6qo0-unsplash.jpg");
+  }
+
+  .background {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-image: url("Desktop/img/richard-horvath-_nWaeTF6qo0-unsplash.jpg");
+    object-fit: contain;
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
   }
   
+  .accountImg {
+    width: 100px;
+  }
+
   .lockScreen {
-    background-color: lightBlue;
+    background-color: transparent;
     width: 100vw;
     height: 100vh;
   }
@@ -14,8 +29,7 @@ body {
     margin-top: calc(50vh - 175px);
     margin-left: calc(50vw - 162.5px);
     width: 325px;
-    height: 350px;
-    background-color: gray;
+    height: 450px;
     border-radius: 25px;
     text-align: center;
     color: white;
@@ -24,16 +38,26 @@ body {
   .signUpUser {
     border: 0px;
     font-size: 20px;
+    background-color: rgba(255, 255, 255, 0.25);
+    color: white;
+    border-radius: 10px;
   }
   
   .signUpPass {
     border: 0px;
     font-size: 20px;
+    background-color: rgba(255, 255, 255, 0.25);
+    color: white;
+    border-radius: 10px;
   }
   
   .signUpSub {
     border: 0px;
     font-size: 20px;
+    width: 25px;
+    background-image: url("Desktop/img/arrow_forward_FILL0_wght400_GRAD0_opsz25px.png");
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 25px;
   }
   
   .brake-large {

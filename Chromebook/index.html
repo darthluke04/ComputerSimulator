@@ -9,15 +9,17 @@
   </head>
   <body onload="main();">
     <div id="lockScreen" class="lockScreen">
+      <div class="background"></div>
       <div id="signUp" class="signUp">
-        <h1>Create Account Please:</h1>
-        <hr>
-        <div class="brake-large"></div>
+        <img class="accountImg" src="Desktop/img/account_circle_white_24dp.svg">
+        <p>Other User&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 0.5em;">╲╱</span></p>
+        <!-- <hr> -->
+        <!-- <div class="brake-large"></div> -->
         <input id="signUpUser" class="signUpUser" type="input" placeholder="Username" value="">
-        <div class="brake-medium"></div>
+        <div class="brake-small"></div>
         <input id="signUpPass" class="signUpPass" type="password" placeholder="Password" value="" onchange="signUp();">
         <div class="brake-small"></div>
-        <input id="signUpSub" class="signUpSub" onclick="signUp();" type="button" value="Submit">
+        <input id="signUpSub" class="signUpSub" onclick="signUp();" type="button" value="">
       </div>
     </div>
   </body>

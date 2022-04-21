@@ -395,7 +395,7 @@ function toggleMoreOptions() {
     document.getElementById("desktopMenu-More-Options-SignOut").className = "desktopMenu-More-Options-SignOut-Closed";
     document.getElementById("desktopMenu-More-Options-Power").className = "desktopMenu-More-Options-Power-Closed";
     document.getElementById("desktopMenu-More-Options-Lock").className = "desktopMenu-More-Options-Lock-Closed";
-    document.getElementById("desktopMenu-More-Options-Settings").className = "desktopMenu-More-Options-Settings-Closed";<!-- updated-->
+    document.getElementById("desktopMenu-More-Options-Settings").className = "desktopMenu-More-Options-Settings-Closed";/* Updated*/
     $("#desktopMenu-More-Options-SignOut-Inner").html("");
   }
 }
