@@ -257,7 +257,7 @@
 .desktopMenu-More-Options-Lock-Closed {
   background-color: rgba(255, 255, 255, 0);
   border-radius: 25px;
-  width: 75px;
+  width: 35px;
   height: 35px;
   background-image: url("");
   object-fit: cover;
@@ -275,8 +275,37 @@
   width: 35px;
   height: 35px;
   cursor: pointer;
-  background-image: url("img/outline_power_settings_new_white_35px.png");
+  background-image: url("img/lock_FILL0_wght400_GRAD0_opsz35px.png");
   margin-left: 190px;
+  margin-top: 7.5px;
+  transition-duration: 0s;
+  position: fixed;
+  font-size: 15px;
+}
+
+.desktopMenu-More-Options-Settings-Closed {
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 25px;
+  width: 75px;
+  height: 35px;
+  background-image: url("");
+  object-fit: cover;
+  cursor: pointer;
+  margin-left: 0px;
+  margin-top: 7.5px;
+  transition-duration: 0.25s;
+  position: fixed;
+  font-size: 15px;
+}
+
+.desktopMenu-More-Options-Settings-Open {
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: 25px;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  background-image: url("img/settings_FILL0_wght400_GRAD0_opsz35px.png");
+  margin-left: 235px;
   margin-top: 7.5px;
   transition-duration: 0s;
   position: fixed;

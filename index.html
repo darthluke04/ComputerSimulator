@@ -3,11 +3,47 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>name</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-		<script src="script.js"></script>
+    <title>Main</title>
   </head>
-  <body onload="location.href='Chromebook/index.html'">
-    body
+
+  <style>
+    body {
+      text-align: center;
+      font-family: 'Noto Sans', sans-serif;
+      margin-top: 20%;
+    }
+
+    b {
+      font-size: 3em;
+      font-weight: 900;
+      color: #004974;
+    }
+
+    button {
+      font-size: 3em;
+      width: 310px;
+      border: 1px solid black;
+      border-radius: 15px;
+      font-weight: 200;
+      background-color: #23a9f2;
+      color: #0083d0;
+    }
+
+    button:hover {
+      font-size: 3.1em;
+      border: 1px solid black;
+      border-radius: 15px;
+      font-weight: 200;
+      background-color: #23a9f2;
+      color: #004974;
+    }
+  </style>
+
+  <body>
+    <b>Please Select an OS (Operating System)</b>
+    <br><br><br><br>
+    <button onclick="location.href='Chromebook/index.html'">Chrome OS</button>
+    <br><br><br>
+    <button onclick="location.href='Windows/index.html'">Windows OS</button>
   </body>
 </html>

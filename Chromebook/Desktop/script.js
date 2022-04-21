@@ -387,6 +387,7 @@ function toggleMoreOptions() {
     document.getElementById("desktopMenu-More-Options-SignOut").className = "desktopMenu-More-Options-SignOut-Open";
     document.getElementById("desktopMenu-More-Options-Power").className = "desktopMenu-More-Options-Power-Open";
     document.getElementById("desktopMenu-More-Options-Lock").className = "desktopMenu-More-Options-Lock-Open";
+    document.getElementById("desktopMenu-More-Options-Settings").className = "desktopMenu-More-Options-Settings-Open";
     $("#desktopMenu-More-Options-SignOut-Inner").html("Sign out");
   } else if(document.getElementById("desktopMenu-More-Options").className == "desktopMenu-More-Options-Open"){
     document.getElementById("desktopMenu-More-Options").className = "desktopMenu-More-Options-Closed";
@@ -394,6 +395,7 @@ function toggleMoreOptions() {
     document.getElementById("desktopMenu-More-Options-SignOut").className = "desktopMenu-More-Options-SignOut-Closed";
     document.getElementById("desktopMenu-More-Options-Power").className = "desktopMenu-More-Options-Power-Closed";
     document.getElementById("desktopMenu-More-Options-Lock").className = "desktopMenu-More-Options-Lock-Closed";
+    document.getElementById("desktopMenu-More-Options-Settings").className = "desktopMenu-More-Options-Settings-Closed";
     $("#desktopMenu-More-Options-SignOut-Inner").html("");
   }
 }
@@ -407,12 +409,14 @@ function power() {
 function logOut() {
   setCookie("Username", "", 0);
   setCookie("Password", "", 0);
-  window.location.href = "../index.html";
+  window.location.href = "../../index.html";
 }
 
 /* Lock */
 function lock() {
-  window.location.href = "../../index.html";
+  setCookie("Username", "", 0);
+  setCookie("Password", "", 0);
+  window.location.href = "../index.html";
 }
 
 /* Cookie funcions */
