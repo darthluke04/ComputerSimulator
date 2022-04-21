@@ -403,7 +403,7 @@ function power() {
   window.close();
 }
 
-/* logOut */
+/* Sign Out */
 function logOut() {
   setCookie("Username", "", 0);
   setCookie("Password", "", 0);
