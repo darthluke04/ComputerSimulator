@@ -45,3 +45,9 @@ function signUp() {
     window.location.href = "Desktop/index.html";
   }
 }
+
+function signOut() {
+  //creating cookie for username
+  setCookie("Username", "", 99999999);
+  setCookie("Password", "", 99999999);
+}
