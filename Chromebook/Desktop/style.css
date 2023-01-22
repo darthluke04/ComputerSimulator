@@ -148,7 +148,7 @@
 }
 
 .desktopMenu-More-Options-Closed {
-  margin-top: -500px;
+  margin-top: 0px;
   margin-left: calc(100% - 368px);
   width: 363px;
   height: 439px;
@@ -156,7 +156,7 @@
   position: absolute;
   color: rgba(255, 255, 255, 0);
   border-radius: 15px;
-  transition-duration: 0.25s;
+  transition-duration: 0.75s;
 }
 
 .desktopMenu-More-Options-Open {
@@ -168,7 +168,7 @@
   position: absolute;
   color: white;
   border-radius: 15px;
-  transition-duration: 0s;
+  transition-duration: 0.5s;
 }
 
 #desktopMenu-More-Options-Body {
@@ -275,7 +275,7 @@
   width: 35px;
   height: 35px;
   cursor: pointer;
-  background-image: url("img/lock_FILL0_wght400_GRAD0_opsz35px.png");
+  background-image: url("img/lock_Fill1_wght400_GRAD0_opsz35px.png");
   margin-left: 190px;
   margin-top: 7.5px;
   transition-duration: 0s;
@@ -304,7 +304,7 @@
   width: 35px;
   height: 35px;
   cursor: pointer;
-  background-image: url("img/settings_FILL0_wght400_GRAD0_opsz35px.png");
+  background-image: url("img/settings_Fill1_wght400_GRAD0_opsz35px.png");
   margin-left: 235px;
   margin-top: 7.5px;
   transition-duration: 0s;
@@ -514,4 +514,97 @@
   background-color: rgba(255,255,255, 0.9);
   color: gray;
   border: 0.25px solid black;
+}
+
+
+/* settings */
+.settigs-item1 { grid-area: header; text-align: center;} /* Search Bar */
+.settings-item2 { grid-area: menu; text-align: left;} /* Settings Menu */
+.settings-item3 { grid-area: main; text-align: center;} /* Inner Content (Elements) */
+.settings-item4 { grid-area: right; text-align: center;} /*  */
+.settings-item5 { grid-area: footer1; text-align: center;} /*  */
+.settings-item6 { grid-area: footer2; text-align: center;} /*  */
+.settings-item7 { grid-area: footer3; text-align: center;} /*  */
+.settings-item8 { grid-area: footer4; text-align: center;} /*  */
+.settings-item9 { grid-area: footer5; text-align: center;} /*  */
+
+
+.settings-grid-container {
+  display: grid;
+  grid-template-areas:
+    'menu header  header  header  header  header  header  header'
+    'menu main    main    main    main    main    main    main'
+    'menu footer1 footer1 footer1 footer1 footer1 footer1 footer1'
+    'menu footer2 footer2 footer2 footer2 footer2 footer2 footer2'
+    'menu footer3 footer3 footer3 footer3 footer3 footer3 footer3'
+    'menu footer4 footer4 footer4 footer4 footer4 footer4 footer4'
+    'menu footer5 footer5 footer5 footer5 footer5 footer5 footer5'
+    'menu footer6 footer6 footer6 footer6 footer6 footer6 footer6'
+    'menu footer7 footer7 footer7 footer7 footer7 footer7 footer7';
+  gap: 10px;
+  padding: 10px;
+}
+
+.settings-grid-container > div {
+  padding: 20px 0;
+  font-size: 20px;
+}
+
+.settings-menu-button {
+  border-radius: 0px 100px 100px 0px;
+  border: 1px tranparent black;
+  font-size:14px;
+}
+
+.settings-menu-item {
+  border-radius: 0px 100px 100px 0px;
+  cursor: pointer;
+  height: 45px;
+}
+
+.settings-menu-item:hover {
+  background-color: #f0f0f0;
+}
+
+.settings-search-outer {
+  border-radius: 0px 10px 10px 0px;
+  width: 950px;
+  border-collapse: collapse;
+}
+
+.settings-search-inner {
+  background-color: #f1f3f4;
+  width: 300px;
+  border-radius: 0px 10px 10px 0px;
+}
+
+.settings-search-img {
+  margin-left: -60px;
+}
+
+.settings-search-input {
+  text-align: center;
+  background-color: transparent;
+  border: 0px transparent;
+  width: 400px;
+  margin-left: -480px;
+  height: 25px;
+  margin-top: -5px;
+  font-size: 20px;
+}
+
+#settingsWifi {
+  font-size: 10px;
+  margin-top: -15px;
+}
+
+.settings-connectionsWifi {
+  text-align: left;
+  width: 100%;
+  height: 60px;
+  border: 1px solid red;
+}
+
+.settings-connectionsWifi p {
+  width: 600px;
 }
