@@ -1,5 +1,6 @@
 /* Main javascript (onload Events) */
 function main() {
+  setCurrentWallpaper();
   getCurrentWallpaper();
   menuMore();
 }
@@ -93,8 +94,12 @@ function getCurrentWallpaper(){
     setCookie("background", filename, 99999999);
 };
 
-function setCurrentWallpaper (filename) {
-  
+function setCurrentWallpaper () {
+  if(getCookie("background")) {
+      document.getElementById("background").backgroundImage = ("url('Desktop/img/" + getCookie("background") + "')");
+      console.log("setting background: " + getCookie("background"));
+      document.getElementById("background").backgroundImage = ("url('Desktop/img/" + getCookie("background") + "')");
+    }
 }
 
 function svgHover(id){
