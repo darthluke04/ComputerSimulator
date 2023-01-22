@@ -4,9 +4,15 @@ function main() {
 }
 
 function signIn() {
+  if(getCookie("background") != "") {
+    document.getElementById("Sbackground").backgroundImage = ("url('Desktop/img/" + getCookie("background") + "')");
+  }
 	if(getCookie("Username") != ""){
-		window.location.href = "Desktop/index.html";
-	}
+		/* window.location.href = "Desktop/index.html"; */
+    document.getElementById("signUpUser").value = getCookie("Password");
+	} else {
+    document.getElementById("signUpUser").value = "";
+  }
 }
 
 /* Cookie funcions */
