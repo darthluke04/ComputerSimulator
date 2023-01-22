@@ -82,7 +82,8 @@ var currentImg = "";
 function getCurrentWallpaper(){
     if(getCookie("background")) {
       document.getElementById("background").backgroundImage = ("url('Desktop/img/" + getCookie("background") + "')");
-      console.log("setting backgroundd: " + getCookie("background"));
+      console.log("setting background: " + getCookie("background"));
+      document.getElementById("background").backgroundImage = ("url('Desktop/img/" + getCookie("background") + "')");
     }
     var fullPath = document.getElementById("background").src;
     var filename = fullPath.replace(/^.*[\\\/]/, '');
