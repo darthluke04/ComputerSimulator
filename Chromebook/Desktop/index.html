@@ -157,10 +157,159 @@
             </div>
           </div>
           <div class="grid-item">
+          </div><!-- grid-item -->
+        </div><!-- wallpaper-outer -->
+      </div><!-- windowMenu -->
+    </div><!-- settingsMain -->
+    
+    
+    <!-- Window-Main -->
+    <div id="settingsMain" class="settings">
+      <div id="windowMenu" class="window-Menu">
+        <table>
+          <tr>
+            <td id="settingsMinimize" class="settings-option" onmousedown="closeWallpaper();" onmouseover="svgHover('settingsExit')" onmousemove="svgLeave('settingsExit')">
+              <!--<svg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 0 24 24' width='24px' fill='#000000'><path d='M0 0h24v24H0V0z' fill='none'/><path d='M6 19h12v2H6v-2z'/></svg>-->
+              <img id="settingsMinimize_img" src="img/minimize_black_24dp.svg">
+            </td>
+            <td id="settingsFull" class="settings-option" onclick="" onmouseover="svgHover('settingsFull')" onmousemove="svgLeave('settingsFull')">
+              <!--<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>-->
+              <img id="settingsFull_img" src="img/fullscreen_black_24dp.svg">
+            </td>
+            <td id="settingsExit" class="settings-option" onmousedown="closeSettings();" onmouseover="svgHover('settingsExit')" onmousemove="svgLeave('settingsExit')">
+              <!--<btn><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg></btn>!-->
+              <img id="settingsExit_img" src="img/close_black_24dp.svg">
+            </td>
+          </tr>
+        </table>
+      </div>
+      <br><br>
+      <hr style="width: 75%; margin-top: -50px;">
+      <div class="settings-grid-container">
+        <div style="" class="settings-item2">
+          <b style="font-size: 18px; color: grey">Settings</b>
+          <table style="border-spacing: 0 5px;" width="240px">
+            <tr class="settings-menu-item">
+              <td><img height="20px" src="img/signal_wifi_4_bar_black_24dp.svg"></td>
+              <td class="settings-menu-button">Network</td>
+            </tr>
+            <tr class="settings-menu-item">
+              <td><img height="20px" src="img/bluetooth_FILL0_wght400_GRAD0_opsz24.svg"></td>
+              <td class="settings-menu-button">Bluetooth</td>
+            </tr>
+            <tr class="settings-menu-item">
+              <td><img height="20px" src="img/smartphone_FILL0_wght400_GRAD0_opsz24.svg"></td>
+              <td class="settings-menu-button">Connected Devices</td>
+            </tr>
+            <tr class="settings-menu-item">
+              <td><img height="20px" src="img/account_circle_black_24dp.svg"></td>
+              <td class="settings-menu-button">Accounts</td>
+            </tr>
+            <tr class="settings-menu-item">
+              <td><img height="20px" src="img/laptop_chromebook_FILL0_wght400_GRAD0_opsz24.svg"></td>
+              <td class="settings-menu-button">Device</td>
+            </tr>
+            <tr class="settings-menu-item">
+              <td><img height="20px" src="img/brush_FILL0_wght400_GRAD0_opsz24.svg"></td>
+              <td class="settings-menu-button">Personalization</td>
+            </tr>
+            <tr class="settings-menu-item">
+              <td><img height="20px" src="img/search_black_24dp.svg"></td>
+              <td class="settings-menu-button">Search and Assistant</td>
+            </tr>
+            <tr class="settings-menu-item">
+              <td><img height="20px" src="img/security_FILL0_wght400_GRAD0_opsz24.svg"></td>
+              <td class="settings-menu-button">Security and Privacy</td>
+            </tr>
+            <tr class="settings-menu-item">
+              <td><img height="20px" src="img/apps_FILL0_wght400_GRAD0_opsz24.svg"></td>
+              <td class="settings-menu-button">Apps</td>
+            </tr>
+          </table>
+        </div>
+        <div class="settings-item1">
+          <div id="settingSearch" class="settingSearch">
+            <table class="settings-search-outer">
+              <tr class="settings-search-inner">
+                <td>
+                  <img class="settings-search-img" src="img/search_black_24dp.svg">
+                </td>
+                <td>
+                  <input id="settingsSearchImg" class="settings-search-input" type="input" placeholder="Search settings">
+                </td>
+              </tr>
+            </table>
           </div>
         </div>
+        <div id="settingsDashboard" class="settings-dashboard">
+        <div class="settings-item5">
+          <p style="text-align: left;">Connections</p>
+          <table id="connectionsItem">
+            <tr>
+              <td>
+                <img id="settingsWifiImg" src="">
+              </td>
+              <td class="settings-connectionsWifi">
+                    <p>Wi-Fi</p>
+                    <p id="settingsWifi"></p>
+              </td>
+              <td>
+                
+              </td>
+              <td>
+                
+              </td>
+              <td>
+                
+              </td>
+            </tr>
+            <tr>
+              <td>
+                
+              </td>
+              <td>
+                
+              </td>
+              <td>
+                
+              </td>
+              <td>
+                
+              </td>
+              <td>
+                
+              </td>
+            </tr>
+          </table>
+        </div>
+        </div>
+        <div class="settings-item6">
+          Accounts
+          <table id="accountsItem">
+            
+          </table>
+        </div>
+        <div class="settings-item7">
+          Device
+          <table id="deviceItem">
+            
+          </table>
+        </div>
+        <div class="settings-item8">
+          Personalization
+          <table id="personalizationItem">
+            
+          </table>
+        </div>
+        <div class="settings-item9">
+          Security
+          <table id="securityItem">
+            
+          </table>
+        </div>
       </div>
-    </div>
+      
+    </div><!-- settingsMain -->
     
     <div id="window-App" class="window-App" onclick="document.getElementById('searchApps').className = 'searchApps-Closed'">
       <div id="window-Chrome" class="window-Chrome">
@@ -227,7 +376,7 @@
           <div id="desktopMenu-More-Options-SignOut" class="desktopMenu-More-Options-SignOut-Closed" onclick="logOut(); console.log('Loging Out')"><div id="desktopMenu-More-Options-SignOut-Inner" class="desktopMenu-More-Options-SignOut-Closed-Inner" style="padding: 6px; width: 60px;">Sign out</div></div>
           <div id="desktopMenu-More-Options-Power" class="desktopMenu-More-Options-Power-Closed" onclick="power();"></div>
           <div id="desktopMenu-More-Options-Lock" class="desktopMenu-More-Options-Lock-Closed" onclick="lock();"></div>
-          <div id="desktopMenu-More-Options-Settings" class="desktopMenu-More-Options-Settings-Closed" onclick=""></div>
+          <div id="desktopMenu-More-Options-Settings" class="desktopMenu-More-Options-Settings-Closed" onclick="openSettings(); toggleMoreOptions();"></div>
         </div>
       </div><!-- desktopMenuMoreOptions -->
     </div><!-- desktop -->
