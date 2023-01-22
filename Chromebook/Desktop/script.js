@@ -80,6 +80,9 @@ function changeWallpaper(path) {
 var currentImg = "";
 
 function getCurrentWallpaper(){
+    if(getCookie("background")) {
+      document.getElementById("Sbackground").backgroundImage = ("url('Desktop/img/" + getCookie("background") + "')");
+    }
     var fullPath = document.getElementById("background").src;
     var filename = fullPath.replace(/^.*[\\\/]/, '');
     document.getElementById("currentImgName").innerHTML = "\"" + filename + "\"";
