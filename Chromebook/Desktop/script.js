@@ -53,6 +53,7 @@ function rightClick(toggle) {
     }
     if(toggle == "close") {
         document.getElementById("rightClick").style.display = "none"; //here you draw your own menu
+        document.getElementById("desktopMenu-More-Options").className == "desktopMenu-More-Options-Open"
     }
 }
 
@@ -83,7 +84,13 @@ function getCurrentWallpaper(){
     var filename = fullPath.replace(/^.*[\\\/]/, '');
     document.getElementById("currentImgName").innerHTML = "\"" + filename + "\"";
     document.getElementById("currentImg").src = fullPath;
+    setCurrentWallpaper(filename);
+    setCookie("background", filename, 99999999);
 };
+
+function setCurrentWallpaper (filename) {
+  
+}
 
 function svgHover(id){
   if(id == "settingsMinimize"){
@@ -117,6 +124,12 @@ function autohideShelf(){
   alert("you clicked \"Autohide Shelf\"");
 }
 
+/* Disable keyboard shortcuts */
+/*document.onkeydown = function (e) {
+  e.preventDefault();
+}*/
+/* */
+
 
 const log = document.getElementById('log');
 
@@ -124,7 +137,10 @@ document.addEventListener('keydown', logKey);
 
 function logKey(e) {
   if(`${e.code}` == "MetaLeft"){
+    e.preventDefault();
     toggleSearchApps();
+  } else if(`${e.code}` == "Control") {
+    e.preventDefault();
   }
 }
 
@@ -225,10 +241,10 @@ function getBattery() {
       if(batteryLvl == 1.00) {
         document.getElementById("desktopMenu-More-Batt").src = "img/battery_full_white_24dp.svg";
 
-      } else if((batteryLvl >= 0.90) && (batteryLvl <= 0.99)){
+      } else if((batteryLvl >= 0.80) && (batteryLvl <= 0.99)){
         document.getElementById("desktopMenu-More-Batt").src = "img/battery_6_bar_white_24dp.svg";
 
-      } else if((batteryLvl >= 0.50) && (batteryLvl <= 0.89)){
+      } else if((batteryLvl >= 0.50) && (batteryLvl <= 0.79)){
         document.getElementById("desktopMenu-More-Batt").src = "img/battery_3_bar_white_24dp.svg";
 
       } else if((batteryLvl >= 0.30) && (batteryLvl <= 0.49)){
@@ -270,14 +286,14 @@ function changeHoverMenu(text, toggle) {
     var mouseX = event.clientX;     // Get the horizontal coordinate
     var mouseY = event.clientY;     // Get the vertical coordinate
     if(toggle == "open") {
-        document.getElementById("hoverMenu-Text").style.left = (mouseX - 30) + "px";
-        document.getElementById("hoverMenu-Text").style.top = (mouseY - 100) + "px";
-        document.getElementById("hoverMenu-Text").style.display = "block"; //here you draw your own menu
-        //navigator.getBattery().then(function(battery) {document.getElementById("hoverMenu-Text").innerHTML = battery.level}
-        document.getElementById("hoverMenu-Text").innerHTML = text;
+      document.getElementById("hoverMenu-Text").style.left = (mouseX - 30) + "px";
+      document.getElementById("hoverMenu-Text").style.top = (mouseY - 100) + "px";
+      document.getElementById("hoverMenu-Text").style.display = "block"; //here you draw your own menu
+      //navigator.getBattery().then(function(battery) {document.getElementById("hoverMenu-Text").innerHTML = battery.level}
+      document.getElementById("hoverMenu-Text").innerHTML = text;
     }
     if(toggle == "close") {
-        document.getElementById("hoverMenu-Text").style.display = "none"; //here you draw your own menu
+      document.getElementById("hoverMenu-Text").style.display = "none"; //here you draw your own menu
     }
 }
 
@@ -285,8 +301,12 @@ function changeHoverMenu(text, toggle) {
 function getWifi() {
   if (navigator.onLine) {
     document.getElementById("desktopMenu-More-Wifi").src = "img/signal_wifi_4_bar_white_24dp.svg";
+    document.getElementById("settingsWifiImg").src = "img/signal_wifi_4_bar_black_24dp.svg";
+    document.getElementById("settingsWifi").innerHTML = "Connected";
   } else {
     document.getElementById("desktopMenu-More-Wifi").src = "img/signal_wifi_bad_white_24dp.svg";
+    document.getElementById("settingsWifiImg").src = "img/signal_wifi_bad_black_24dp.svg";
+    document.getElementById("settingsWifi").innerHTML = "Not Connected";
   }
   //console.log("Connection: " + Navigator.connection + "<br>" + getNetworkInfo("type"));
 }
@@ -417,6 +437,16 @@ function lock() {
   setCookie("Username", "", 0);
   setCookie("Password", "", 0);
   window.location.href = "../index.html";
+}
+
+/* Open Settings */
+function openSettings() {
+  document.getElementById("settingsMain").style.display = "block";
+}
+
+/* Open Settings */
+function closeSettings() {
+  document.getElementById("settingsMain").style.display = "none";
 }
 
 /* Cookie funcions */
