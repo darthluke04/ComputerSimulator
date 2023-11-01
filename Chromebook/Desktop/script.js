@@ -3,6 +3,11 @@ function main() {
   setCurrentWallpaper();
   getCurrentWallpaper();
   menuMore();
+  if(true) {
+    document.getElementById('settings-user').innerHTML = 'HelloWorld';
+  } else {
+    document.getElementById('settings-user').innerHTML = getCookie('Username');
+  }
 }
 
 function menuMore(){
@@ -126,12 +131,32 @@ function svgLeave(id){
 }
 
 
+var autoHide = false
+
 function changeShelfPos(){
   alert("you clicked \"Shelf Position\"");
 }
 
 function autohideShelf(){
-  alert("you clicked \"Autohide Shelf\"");
+  if(autoHide == false){
+    autoHide = true;
+    document.getElementById("deskMenu").classList = "deskMenu-hidden";
+  } else {
+    autoHide = false;
+    document.getElementById("deskMenu").classList = "deskMenu";
+  }
+}
+
+function showDesk() {
+  if(autoHide == true) {
+    document.getElementById("deskMenu").classList = "deskMenu";
+  }
+}
+
+function hideDesk() {
+  if(autoHide == true) {
+    document.getElementById("deskMenu").classList = "deskMenu-hidden";
+  }
 }
 
 /* Disable keyboard shortcuts */
