@@ -47,6 +47,8 @@
   border-top-right-radius: 25px;
   z-index: 1000;
   transition-duration: 1s;
+  backdrop-filter: blur(75px);
+  webkit-backdrop-filter: blur(75px);
 }
 
 .deskMenu-hidden {
@@ -59,6 +61,8 @@
   border-top-right-radius: 25px;
   z-index: 1000;
   transition-duration: 1s;
+  backdrop-filter: blur(75px);
+  webkit-backdrop-filter: blur(75px);
 }
 
 /* Search Apps SVG */
@@ -80,6 +84,8 @@
   transition-duration: 0.5s;
   visibility: hidden;
   z-index: 1000;
+  backdrop-filter: blur(75px);
+  webkit-backdrop-filter: blur(75px);
 }
 
 .searchApps-Open {
@@ -94,6 +100,8 @@
   transition-duration: 0.5s;
   visibility: show;
   z-index: 1000;
+  backdrop-filter: blur(75px);
+  webkit-backdrop-filter: blur(75px);
 }
 
 .searchApps-Center {
@@ -185,6 +193,8 @@
   border-radius: 15px;
   transition-duration: 0.75s;
   z-index: 1000;
+  backdrop-filter: blur(75px);
+  webkit-backdrop-filter: blur(75px);
 }
 
 .desktopMenu-More-Options-Open {
@@ -198,6 +208,8 @@
   border-radius: 15px;
   transition-duration: 0.5s;
   z-index: 1000;
+  backdrop-filter: blur(75px);
+  webkit-backdrop-filter: blur(75px);
 }
 
 #desktopMenu-More-Options-Body {
