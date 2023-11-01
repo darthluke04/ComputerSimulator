@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>Computer Simulator</title>
+    <title>Computer Simulator | Chromebook</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
 		<script src="script.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -227,7 +227,7 @@
             </tr>
           </table>
         </div>
-        <div class="settings-item1">
+        <!--<div class="settings-item1">
           <div id="settingSearch" class="settingSearch">
             <table class="settings-search-outer">
               <tr class="settings-search-inner">
@@ -240,47 +240,555 @@
               </tr>
             </table>
           </div>
-        </div>
+        </div>!-->
         <div id="settingsDashboard" class="settings-dashboard">
-        <div class="settings-item5">
-          <p style="text-align: left;">Connections</p>
-          <table id="connectionsItem">
-            <tr>
-              <td>
-                <img id="settingsWifiImg" src="">
-              </td>
-              <td class="settings-connectionsWifi">
-                    <p>Wi-Fi</p>
-                    <p id="settingsWifi"></p>
-              </td>
-              <td>
+        <div>
+          <div class="settings-dashboard-inner">
+            <div class="settings-card">
+              
+              <p class="card-header">Network</p>
+              <div class="card-inner">
+                <div class="card-row">
+                  <div class="card-row-left">
+                    <img src="img/signal_wifi_4_bar_black_24dp.svg">
+                    <div class="card-row-text">
+                      <p class="card-row-header">Wi-Fi</p>
+                      <p class="card-row-sub">Off</p>
+                    </div>
+                  </div>
+                  <div class="card-row-right">
+                    <p class="card-row-open">></p>
+                  </div>
+                </div>
+                <hr>
+                <div class="card-row">
+                  <div class="card-row-left">
+                    <div class="card-row-text">
+                      <p class="card-row-header">Add Connection</p>
+                    </div>
+                  </div>
+                  <div class="card-row-right">
+                    <p class="card-row-open">></p>
+                  </div>
+                </div>
+              </div>
+              
+              <br>
+              
+              <p class="card-header">Network</p>
+              <div class="card-inner">
+                <div class="card-row">
+                  <div class="card-row-left">
+                    <img src="img/bluetooth_FILL0_wght400_GRAD0_opsz24.svg">
+                    <div class="card-row-text">
+                      <p class="card-row-header">Bluetooth</p>
+                      <p class="card-row-sub">Off</p>
+                    </div>
+                  </div>
+                  <div class="card-row-right">
+                    <p class="card-row-open">></p>
+                  </div>
+                </div>
+              </div>
+              
+              <br>
+              
+              <p class="card-header">Connected Devices</p>
+              <div class="card-inner">
+                <div class="card-row">
+                  <div class="card-row-left">
+                    <img src="img/signal_wifi_4_bar_black_24dp.svg">
+                    <div class="card-row-text">
+                      <p class="card-row-header">Android Phone</p>
+                      <p class="card-row-sub">No eligible devices. <a href="https://support.google.com/chromebook/?p=multi_device&b=celes-signed-mp-v2keys">Learn more</a></p>
+                    </div>
+                  </div>
+                  <div class="card-row-right">
+                    <p class="card-row-open">></p>
+                  </div>
+                </div>
+                <hr>
+                <div class="card-row">
+                  <div class="card-row-left">
+                    <img src="img/signal_wifi_4_bar_black_24dp.svg">
+                    <div class="card-row-text">
+                      <p class="card-row-header">Nearby Share</p>
+                      <p class="card-row-sub">Share files with people around you. <a href="https://support.google.com/chromebook/?p=multi_device&b=celes-signed-mp-v2keys">Learn more</a></p>
+                    </div>
+                  </div>
+                  <div class="card-row-right">
+                    <p class="card-row-open">></p>
+                  </div>
+                </div>
+              </div>
+              
+              <br>
+              
+              <p class="card-header">Accounts</p>
+              <div class="card-inner">
+                <div class="card-row">
+                  <div class="card-row-left">
+                    <img src="img/signal_wifi_4_bar_black_24dp.svg">
+                    <div class="card-row-text">
+                      <p class="card-row-header">Currently signed in as <span id="settings-user"></span></p>
+                      <p class="card-row-sub">1 Google Account</p>
+                    </div>
+                  </div>
+                  <div class="card-row-right">
+                    <p class="card-row-open">></p>
+                  </div>
+                </div>
+                <hr>
+                <div class="card-row">
+                  <div class="card-row-left">
+                    <img src="img/signal_wifi_4_bar_black_24dp.svg">
+                    <div class="card-row-text">
+                      <p class="card-row-header">Sync and Google services</p>
+                    </div>
+                  </div>
+                  <div class="card-row-right">
+                    <p class="card-row-open">></p>
+                  </div>
+                </div>
+              </div>
+              
+              <br>
+              
+              <p class="card-header">Device</p>
+              <div class="card-inner">
+                <div class="card-row">
+                  <div class="card-row-left">
+                    <div class="card-row-text">
+                      <p class="card-row-header">Touchpad</p>
+                    </div>
+                  </div>
+                  <div class="card-row-right">
+                    <p class="card-row-open">></p>
+                  </div>
+                </div>
                 
-              </td>
-              <td>
+                <hr>
+                <div class="card-row">
+                  <div class="card-row-left">
+                    <div class="card-row-text">
+                      <p class="card-row-header">Keyboard</p>
+                    </div>
+                  </div>
+                  <div class="card-row-right">
+                    <p class="card-row-open">></p>
+                  </div>
+                </div>
                 
-              </td>
-              <td>
+                <hr>
+                <div class="card-row">
+                  <div class="card-row-left">
+                    <div class="card-row-text">
+                      <p class="card-row-header">Displays</p>
+                    </div>
+                  </div>
+                  <div class="card-row-right">
+                    <p class="card-row-open">></p>
+                  </div>
+                </div>
                 
-              </td>
+                <hr>
+                <div class="card-row">
+                  <div class="card-row-left">
+                    <div class="card-row-text">
+                      <p class="card-row-header">Storage Managment</p>
+                    </div>
+                  </div>
+                  <div class="card-row-right">
+                    <p class="card-row-open">></p>
+                  </div>
+                </div>
+                
+                <hr>
+                <div class="card-row">
+                  <div class="card-row-left">
+                    <div class="card-row-text">
+                      <p class="card-row-header">Keyboard</p>
+                    </div>
+                  </div>
+                  <div class="card-row-right">
+                    <p class="card-row-open">></p>
+                  </div>
+                </div>
+              </div>
+              
+              <br>
+              
+              <p class="card-header">Personalization</p>
+              <div class="card-inner">
+                <div class="card-row">
+                  <div class="card-row-left">
+                    <div class="card-row-text">
+                      <p class="card-row-header">Change device account image</p>
+                    </div>
+                  </div>
+                  <div class="card-row-right">
+                    <p class="card-row-open">></p>
+                  </div>
+                </div>
+                
+                <hr>
+                <div class="card-row">
+                  <div class="card-row-left">
+                    <div class="card-row-text">
+                      <p class="card-row-header">Wallpaper</p>
+                      <p class="card-row-sub">Open the wallpaper app</p>
+                    </div>
+                  </div>
+                  <div class="card-row-right">
+                    <p class="card-row-open">></p>
+                  </div>
+                </div>
+                
+                <hr>
+                <div class="card-row">
+                  <div class="card-row-left">
+                    <div class="card-row-text">
+                      <p class="card-row-header">Screen saver</p>
+                      <p class="card-row-sub">Disabled</p>
+                    </div>
+                  </div>
+                  <div class="card-row-right">
+                    <p class="card-row-open">></p>
+                  </div>
+                </div>
+              </div>
+              
+              <br>
+              
+              <p class="card-header">Search and Assistant</p>
+              <div class="card-inner">
+                <div class="card-row">
+                  <div class="card-row-left">
+                    <div class="card-row-text">
+                      <p class="card-row-header">Search</p>
+                    </div>
+                  </div>
+                  <div class="card-row-right">
+                    <p class="card-row-open">></p>
+                  </div>
+                </div>
+                
+                <hr>
+                <div class="card-row">
+                  <div class="card-row-left">
+                    <div class="card-row-text">
+                      <p class="card-row-header">Google Assistant</p>
+                      <p class="card-row-sub">Enabled</p>
+                    </div>
+                  </div>
+                  <div class="card-row-right">
+                    <p class="card-row-open">></p>
+                  </div>
+                </div>
+              </div>
+              
+              <br>
+              
+              <p class="card-header">Security and Privacy</p>
+              <div class="card-inner">
+                <div class="card-row">
+                  <div class="card-row-left">
+                    <div class="card-row-text">
+                      <p class="card-row-header">Lock Screen</p>
+                      <p class="card-row-sub">Sign in automatically</p>
+                    </div>
+                  </div>
+                  <div class="card-row-right">
+                    <p class="card-row-open">></p>
+                  </div>
+                </div>
+                
+                <hr>
+                <div class="card-row">
+                  <div class="card-row-left">
+                    <div class="card-row-text">
+                      <p class="card-row-header">Manage other people</p>
+                    </div>
+                  </div>
+                  <div class="card-row-right">
+                    <p class="card-row-open">></p>
+                  </div>
+                </div>
+                
+                <hr>
+                <div class="card-row">
+                  <div class="card-row-left">
+                    <div class="card-row-text">
+                      <p class="card-row-header">Help improve ChromeOS features</p>
+                      <p class="card-row-sub">Automatically sends crash reports as well as diagnostic and usage data to Google</p>
+                    </div>
+                  </div>
+                  <div class="card-row-right">
+                    <p class="card-row-open">></p>
+                  </div>
+                </div>
+                
+                <hr>
+                <div class="card-row">
+                  <div class="card-row-left">
+                    <div class="card-row-text">
+                      <p class="card-row-header">Suggest new content to explore</p>
+                      <p class="card-row-sub">Includes apps, webpages, and more. Sends statistics to improve suggestions only if you’ve chosen to share usage data. <a href="https://support.google.com/chromebook/?p=explorecontent">Learn more</a></p>
+                    </div>
+                  </div>
+                  <div class="card-row-right">
+                    <p class="card-row-open">></p>
+                  </div>
+                </div>
+                
+                <hr>
+                <div class="card-row">
+                  <div class="card-row-left">
+                    <div class="card-row-text">
+                      <p class="card-row-header">Enable Verified Acces</p>
+                    </div>
+                  </div>
+                  <div class="card-row-right">
+                    <p class="card-row-open">></p>
+                  </div>
+                </div>
+                
+                <hr>
+                <div class="card-row">
+                  <div class="card-row-left">
+                    <div class="card-row-text">
+                      <p class="card-row-header">Use secure DNS</p>
+                      <p class="card-row-sub">Determines how to connect to websites over a secure connection</p>
+                    </div>
+                  </div>
+                  <div class="card-row-right">
+                    <p class="card-row-open">></p>
+                  </div>
+                </div>
+              </div>
+              
+              <br>
+              
+              <p class="card-header">Security and Privacy</p>
+              <div class="card-inner">
+                <div class="card-row">
+                  <div class="card-row-left">
+                    <div class="card-row-text">
+                      <p class="card-row-header">Lock Screen</p>
+                      <p class="card-row-sub">Sign in automatically</p>
+                    </div>
+                  </div>
+                  <div class="card-row-right">
+                    <p class="card-row-open">></p>
+                  </div>
+                </div>
+                
+                <hr>
+                <div class="card-row">
+                  <div class="card-row-left">
+                    <div class="card-row-text">
+                      <p class="card-row-header">Manage other people</p>
+                    </div>
+                  </div>
+                  <div class="card-row-right">
+                    <p class="card-row-open">></p>
+                  </div>
+                </div>
+                
+                <hr>
+                <div class="card-row">
+                  <div class="card-row-left">
+                    <div class="card-row-text">
+                      <p class="card-row-header">Help improve ChromeOS features and performance</p>
+                      <p class="card-row-sub">Automatically sends crash reports as well as diagnostic and usage data to Google</p>
+                    </div>
+                  </div>
+                  <div class="card-row-right">
+                    <p class="card-row-open">></p>
+                  </div>
+                </div>
+                
+                <hr>
+                <div class="card-row">
+                  <div class="card-row-left">
+                    <div class="card-row-text">
+                      <p class="card-row-header">Suggest new content to explore</p>
+                      <p class="card-row-sub">Includes apps, webpages, and more. Sends statistics to improve suggestions only if you’ve chosen to share usage data. <a href="https://support.google.com/chromebook/?p=explorecontent">Learn more</a></p>
+                    </div>
+                  </div>
+                  <div class="card-row-right">
+                    <p class="card-row-open">></p>
+                  </div>
+                </div>
+              </div>
+                
+                <hr>
+                <p class="card-header">Security and Privacy</p>
+                <div class="card-inner">
+                <div class="card-row">
+                  <div class="card-row-left">
+                    <div class="card-row-text">
+                      <p class="card-row-header">Manage your apps</p>
+                    </div>
+                  </div>
+                  <div class="card-row-right">
+                    <p class="card-row-open">></p>
+                  </div>
+                </div>
+                
+                <hr>
+                <div class="card-row">
+                  <div class="card-row-left">
+                    <div class="card-row-text">
+                      <p class="card-row-header">Notifications</p>
+                      <p class="card-row-sub">29 Apps</p>
+                    </div>
+                  </div>
+                  <div class="card-row-right">
+                    <p class="card-row-open">></p>
+                  </div>
+                </div>
+                
+                <hr>
+                <div class="card-row">
+                  <div class="card-row-left">
+                    <div class="card-row-text">
+                      <p class="card-row-header">Google Play Store</p>
+                      <p class="card-row-sub">Install apps and games from Google Play on your Chromebook. Learn more</p>
+                    </div>
+                  </div>
+                  <div class="card-row-right">
+                    <p class="card-row-open">></p>
+                  </div>
+                </div>
+                
+                <hr>
+                <div class="card-row">
+                  <div class="card-row-left">
+                    <div class="card-row-text">
+                      <p class="card-row-header">Restore apps on restore</p>
+                      <p class="card-row-sub">Install apps and games from Google Play on your Chromebook. Learn more</p>
+                    </div>
+                  </div>
+                  <div class="card-row-right">
+                    <p class="card-row-open">></p>
+                  </div>
+                </div>
+              </div>
+              </div>
+              
+            </div>
+          </div>
+          <!-- <table class="settings-dashboard-inner" id="connectionsItem">
+            <p>Network</p>
+            <tr style="border: 1px solid black;" class="settings-item6">
+              <div>
+                <img class="settings-element-icon" src="img/signal_wifi_4_bar_black_24dp.svg">
+                <div class="settings-element settings-element-name" style="width: 150px">
+                  Wi-Fi
+                </div>
+                <div class="settings-element settings-element-right">
+                  <div style="width: 20px; text-align:center; margin-left: 862px;">|</div>
+                  <div style="width: 40px; text-align:center;;">></div>
+                </div>
+              </div>
+              <hr>
+              <div>
+                <div class="settings-element">
+                  Other
+                </div>
+                <div class="settings-element">
+                  
+                </div>
+                <div class="settings-element">
+                  
+                </div>
+                <div class="settings-element">
+                  Icon 4
+                </div>
+              </div>
             </tr>
-            <tr>
-              <td>
-                
-              </td>
-              <td>
-                
-              </td>
-              <td>
-                
-              </td>
-              <td>
-                
-              </td>
-              <td>
-                
-              </td>
+            
+            <p>Bluetooth</p>
+            <tr class="settings-item6">
+              
             </tr>
-          </table>
+            
+            <p>Connected Devices</p>
+            <tr class="settings-item6">
+              
+            </tr>
+            
+            <p>Accounts</p>
+            <tr class="settings-item6">
+              
+            </tr>
+            
+            <p>Device</p>
+            <tr class="settings-item6">
+              
+            </tr>
+            
+            <p>Personalization</p>
+            <tr class="settings-item6">
+              
+            </tr>
+            
+            <p>Search and Assistant</p>
+            <tr class="settings-item6">
+              
+            </tr>
+            
+            <p>Security and Privacy</p>
+            <tr class="settings-item6">
+              
+            </tr>
+            
+            <p>Apps</p>
+            <tr class="settings-item6">
+              
+            </tr>
+            
+            <p>Personalization</p>
+            <tr class="settings-item6">
+              
+            </tr>
+            
+            <p>Date and time</p>
+            <tr class="settings-item6">
+              
+            </tr>
+            
+            <p>Language and inputs</p>
+            <tr class="settings-item6">
+              
+            </tr>
+            
+            <p>Files</p>
+            <tr class="settings-item6">
+              
+            </tr>
+            
+            <p>Print and scan</p>
+            <tr class="settings-item6">
+              
+            </tr>
+            
+            <p>Developers</p>
+            <tr class="settings-item6">
+              
+            </tr>
+            
+            <p>Accessibility</p>
+            <tr class="settings-item6">
+              
+            </tr>
+            
+            <p>Reset Settings</p>
+            <tr class="settings-item6">
+              
+            </tr>
+          </table> !-->
         </div>
         </div>
         <div class="settings-item6">
@@ -354,7 +862,8 @@
           </div>
         </div><!-- searchApps-Center -->
       </div><!-- searchApps -->
-      <div id="deskMenu" class="deskMenu">
+      <div class="deskMenuHover" onmouseover="showDesk()" onmouseleave="hideDesk()"></div>
+      <div id="deskMenu" class="deskMenu" onmouseover="showDesk()" onmouseleave="hideDesk()">
         <svg onclick="toggleSearchApps();" height="50px" id="chromeApps" class="chromeApps" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 480 480" shape-rendering="geometricPrecision" text-rendering="geometricPrecision"><ellipse rx="49.20027" ry="49.20027" transform="matrix(3.709339 0 0 3.709339 240 240)" fill="#fff" fill-opacity="0.25" stroke-width="0"/><ellipse rx="49.20027" ry="49.20027" transform="matrix(1.676191 0 0 1.676191 240 240)" fill="rgba(210,219,237,0)" stroke="#fff" stroke-width="3"/><ellipse rx="49.20027" ry="49.20027" transform="matrix(1.379491 0 0 1.379484 240 240)" fill="#fff" stroke="rgba(255,255,255,0)" stroke-width="3"/></svg>
         <p id="log"></p>
         <div id="desktopMenu-Center" class="desktopMenu-Center">
@@ -370,7 +879,7 @@
           </div><!-- deskMenu-More -->
         </div><!-- desktopMenu-Right -->
       </div><!-- deskMenu -->
-      <div id="desktopMenu-More-Options" class="desktopMenu-More-Options-Closed">
+      <div id="desktopMenu-More-Options" class="desktopMenu-More-Options-Closed" onmouseover="showDesk()" onmouseleave="hideDesk(); if(autoHide == true){toggleMoreOptions();}">
         <div id="desktopMenu-More-Options-Body" class="desktopMenu-More-Options-Closed-Body">
           <div id="desktopMenu-More-Options-Acc" class="desktopMenu-More-Options-Acc-Closed"></div>
           <div id="desktopMenu-More-Options-SignOut" class="desktopMenu-More-Options-SignOut-Closed" onclick="logOut(); console.log('Loging Out')"><div id="desktopMenu-More-Options-SignOut-Inner" class="desktopMenu-More-Options-SignOut-Closed-Inner" style="padding: 6px; width: 60px;">Sign out</div></div>
@@ -384,4 +893,4 @@
       <p id="hoverMenu-Text" class="hoverMenu-Text"></p>
     </div>
   </body>
-</html>
+</html
