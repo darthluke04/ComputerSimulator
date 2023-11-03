@@ -41,7 +41,7 @@
   width: 100vw;
   height: var(--menuHeight);
   position: fixed;
-  background-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(0, 0, 0, 0.25);
   margin-top: calc(var(--menuHeight) / -1);
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
@@ -55,7 +55,7 @@
   width: 100vw;
   height: var(--menuHeight);
   position: fixed;
-  background-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(0, 0, 0, 0.25);
   margin-top: calc(var(--menuHeight));
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
@@ -92,7 +92,7 @@
   width: 100vw;
   height: calc(var(--menuHeight) + 232px);
   position: fixed;
-  background-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(0, 0, 0, 0.25);
   color: rgba(0, 0, 0, 1);
   margin-top: calc(calc(var(--menuHeight) + 232px) / -1);
   border-top-left-radius: 25px;
@@ -138,7 +138,7 @@
 }
 
 .desktopMenu-More {
-  background-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(0, 0, 0, 0.25);
   width: 185px;
   height: calc(var(--menuHeight) - 12px);
   margin-top: calc(var(--menuHeight) - 62px);
@@ -202,7 +202,7 @@
   margin-left: calc(100% - 368px);
   width: 363px;
   height: 439px;
-  background-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(0, 0, 0, 0.25);
   position: absolute;
   color: white;
   border-radius: 15px;
@@ -222,19 +222,19 @@
   width: 50px;
   height: 50px;
   background-image: url("");
-  object-fit: none;
+  object-fit: cover;
   cursor: pointer;
   transition-duration: 0.25s;
   position: fixed;
 }
 
 .desktopMenu-More-Options-Acc-Open {
-  background-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(0, 0, 0, 0.25);
   border-radius: 25px;
   width: 50px;
   height: 50px;
   background-image: url("img/account_circle_white_24dp.png");
-  object-fit: none;
+  object-fit: cover;
   cursor: pointer;
   transition-duration: 0s;
   position: fixed;
@@ -254,7 +254,7 @@
 }
 
 .desktopMenu-More-Options-SignOut-Open {
-  background-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(0, 0, 0, 0.25);
   border-radius: 25px;
   width: 75px;
   height: 35px;
@@ -282,7 +282,7 @@
 }
 
 .desktopMenu-More-Options-Power-Open {
-  background-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(0, 0, 0, 0.25);
   border-radius: 25px;
   width: 35px;
   height: 35px;
@@ -311,7 +311,7 @@
 }
 
 .desktopMenu-More-Options-Lock-Open {
-  background-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(0, 0, 0, 0.25);
   border-radius: 25px;
   width: 35px;
   height: 35px;
@@ -340,7 +340,7 @@
 }
 
 .desktopMenu-More-Options-Settings-Open {
-  background-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(0, 0, 0, 0.25);
   border-radius: 25px;
   width: 35px;
   height: 35px;
@@ -352,6 +352,97 @@
   position: fixed;
   font-size: 15px;
 }
+
+.desktopMenu-More-Options-Big-Open {
+  width: calc(100% - 20px);
+  height: 230px;
+  margin-top: 55px;
+  position: absolute;
+  opacity: 100%;
+}
+
+.desktopMenu-More-Options-Big-Closed {
+  width: calc(100% - 20px);
+  height: 230px;
+  margin-top: 55px;
+  position: absolute;
+  opacity: 0%;
+}
+
+.desktopMenu-More-Options-Big-Inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}
+
+.desktopMenu-More-Options-Big-Row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.desktopMenu-More-Options-Big-Item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 20%
+}
+
+.desktopMenu-More-Options-Big-Item img {
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.25);
+  padding: 12px;
+  width: 18px;
+  height: 18px;
+}
+
+.desktopMenu-More-Options-Big-Item img:not(.options-circ-btn img), .desktopMenu-More-Options-Big-Item p:not(.options-circ-btn p) {
+  cursor: not-allowed;
+}
+
+.desktopMenu-More-Options-Big-Item p {
+  font-size: 12px;
+  text-align: center;
+  width: 100%;
+}
+
+.options-circ-btn img, .options-circ-btn p {
+  cursor: pointer;
+}
+.desktopMenu-More-Options-Big-Item .subtitle {
+  font-size: 11px;
+  text-align: center;
+  width: 100%;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.night-light-on {
+  opacity: 90%;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000000;
+  position: absolute;
+  pointer-events: none;
+  transition-duration: 1s;
+  backdrop-filter: sepia(90%);
+}
+
+.night-light-off {
+  background-color: tan;
+  opacity: 0%;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000000;
+  position: absolute;
+  pointer-events: none;
+  transition-duration: 1s;
+}
+
 
 .chromeApp {
   height: calc(var(--menuHeight) - 12px);
