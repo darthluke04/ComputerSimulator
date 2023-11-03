@@ -14,6 +14,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </head>
   <body id="body" class="body" onload="main();" onmousemove="main();">
+    <div id="nightLight" class="night-light-off"></div>
     <div id="rightClick" class="rightClick">
       <table class="settings-table">
         <tr onclick="autohideShelf();">
@@ -886,11 +887,62 @@
           <div id="desktopMenu-More-Options-Power" class="desktopMenu-More-Options-Power-Closed" onclick="power();"></div>
           <div id="desktopMenu-More-Options-Lock" class="desktopMenu-More-Options-Lock-Closed" onclick="lock();"></div>
           <div id="desktopMenu-More-Options-Settings" class="desktopMenu-More-Options-Settings-Closed" onclick="openSettings(); toggleMoreOptions();"></div>
+          <div id="desktopMenu-More-Options-Big" class="desktopMenu-More-Options-Big-Open">
+            <div class="desktopMenu-More-Options-Big-Inner">
+              <div class="desktopMenu-More-Options-Big-Row">
+                <div class="desktopMenu-More-Options-Big-Item">
+                  <img src="img/signal_wifi_4_bar_white_24dp.svg">
+                  <div>
+                    <p id="Menu-Wifi-Status">Wifi</p>
+                    <p id="Menu-Wifi-SubStatus" class="subtitle">Not Connected</p>
+                  </div>
+                </div>
+                <div class="desktopMenu-More-Options-Big-Item">
+                  <img src="img/bluetooth_white_24dp.svg">
+                  <div>
+                    <p id="Menu-Bluetooth-Status">Bluetooth</p>
+                    <!-- <p class="subtitle">Off</p> !-->
+                  </div>
+                </div>
+                <div class="desktopMenu-More-Options-Big-Item">
+                  <img src="img/">
+                  <div>
+                    <p>Notifications</p>
+                    <p class="subtitle">Do not disterb</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="desktopMenu-More-Options-Big-Row">
+                <div class="desktopMenu-More-Options-Big-Item">
+                  <img src="img/">
+                  <div>
+                    <p>Screen <br> Capture</p>
+                  </div>
+                </div>
+                <div class="desktopMenu-More-Options-Big-Item">
+                  <img src="img/">
+                  <div>
+                    <p>Nearby Visibility</p>
+                    <p class="subtitle">Off</p>
+                  </div>
+                </div>
+                <div class="options-circ-btn desktopMenu-More-Options-Big-Item">
+                  <img id="Menu-NightLight-Icon" src="img/dark_mode_white.svg" onclick="toggleNightLight();">
+                  <div class="">
+                    <p>Night Light</p>
+                    <p id="Menu-NightLight-SubStatus" class="subtitle">Off</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+            
         </div>
       </div><!-- desktopMenuMoreOptions -->
     </div><!-- desktop -->
     <div id="hoverMenu" class="hoverMenu">
       <p id="hoverMenu-Text" class="hoverMenu-Text"></p>
-    </div>
+  </div>
   </body>
 </html>
