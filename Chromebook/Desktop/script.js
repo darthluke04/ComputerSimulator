@@ -443,6 +443,8 @@ function toggleMoreOptions() {
     document.getElementById("desktopMenu-More-Options-Power").className = "desktopMenu-More-Options-Power-Open";
     document.getElementById("desktopMenu-More-Options-Lock").className = "desktopMenu-More-Options-Lock-Open";
     document.getElementById("desktopMenu-More-Options-Settings").className = "desktopMenu-More-Options-Settings-Open";
+    document.getElementById("desktopMenu-More-Options-Big").className = "desktopMenu-More-Options-Big-Open";
+    console.log(document.getElementById("desktopMenu-More-Options-Big").className);
     $("#desktopMenu-More-Options-SignOut-Inner").html("Sign out");
   } else if(document.getElementById("desktopMenu-More-Options").className == "desktopMenu-More-Options-Open"){
     document.getElementById("desktopMenu-More-Options").className = "desktopMenu-More-Options-Closed";
@@ -451,7 +453,41 @@ function toggleMoreOptions() {
     document.getElementById("desktopMenu-More-Options-Power").className = "desktopMenu-More-Options-Power-Closed";
     document.getElementById("desktopMenu-More-Options-Lock").className = "desktopMenu-More-Options-Lock-Closed";
     document.getElementById("desktopMenu-More-Options-Settings").className = "desktopMenu-More-Options-Settings-Closed";/* Updated*/
+    document.getElementById("desktopMenu-More-Options-Big").className = "desktopMenu-More-Options-Big-Closed";
+    console.log(document.getElementById("desktopMenu-More-Options-Big").className);
     $("#desktopMenu-More-Options-SignOut-Inner").html("");
+  }
+  document.getElementById("Menu-Wifi-Status").innerHTML = getNetworkInfo("type");
+  navigator.bluetooth.getAvailability().then((available) => {
+  if (available) {
+    document.getElementById("Menu-Bluetooth-Status").innerHTML = "Availible";
+  } else {
+    document.getElementById("Menu-Bluetooth-Status").innerHTML = "Not Availible";
+  }
+});
+  if(navigator.onLine){
+    document.getElementById("Menu-Wifi-SubStatus").innerHTML = "Connected";
+  } else {
+    document.getElementById("Menu-Wifi-SubStatus").innerHTML = "Not <br> Connected";
+  }
+}
+
+var nightLight = false;
+var nightLightNum = 90;
+/* Night Light */
+function toggleNightLight() {
+  if(nightLight == false) {
+    //document.getElementById("nightLight").style.backdropfilter = "sepia(" + nightLightNum + "%)";
+    document.getElementById("nightLight").className = "night-light-on";
+    document.getElementById("Menu-NightLight-SubStatus").innerHTML = "On " + nightLightNum + "%";
+    document.getElementById("Menu-NightLight-Icon").src = "img/night_mode_white.svg";
+    nightLight = true;
+  } else {
+    //document.getElementById("nightLight").style.backdropfilter = "sepia(0)";
+    document.getElementById("nightLight").className = "night-light-off";
+    document.getElementById("Menu-NightLight-SubStatus").innerHTML = "Off";
+    document.getElementById("Menu-NightLight-Icon").src = "img/day_mode_white.svg";
+    nightLight = false;
   }
 }
 
