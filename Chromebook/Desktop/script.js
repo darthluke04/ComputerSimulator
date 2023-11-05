@@ -59,7 +59,7 @@ function rightClick(toggle) {
     }
     if(toggle == "close") {
         document.getElementById("rightClick").style.display = "none"; //here you draw your own menu
-        document.getElementById("desktopMenu-More-Options").className == "desktopMenu-More-Options-Open"
+        document.getElementById("desktopMenu-More-Options").className == "desktopMenu-More-Options-Open";
     }
 }
 
@@ -182,9 +182,22 @@ function logKey(e) {
 function toggleSearchApps() {
   if(document.getElementById("searchApps").className == "searchApps-Closed"){
     document.getElementById("searchApps").className = "searchApps-Open";
-  } else if(document.getElementById("searchApps").className == "searchApps-Open"){
+  } else if(document.getElementById("searchApps").className == "searchApps-Open" || document.getElementById("searchApps").className == "searchApps-More"){
     document.getElementById("searchApps").className = "searchApps-Closed"
   }
+}
+
+searchApps = false;
+function toggleSearchAppsBig() {
+ if(searchApps == false){
+   document.getElementById("searchApps").className = "searchApps-More";
+   document.getElementById("searchApps-Center-Drag").src = "img/drag_down.svg";
+   searchApps = true;
+ } else {
+   document.getElementById("searchApps").className = "searchApps-Open";
+   document.getElementById("searchApps-Center-Drag").src = "img/keyboard_arrow_up_white_24dp.svg";
+   searchApps = false;
+ }
 }
 
 
@@ -443,6 +456,7 @@ function toggleMoreOptions() {
     document.getElementById("desktopMenu-More-Options-Power").className = "desktopMenu-More-Options-Power-Open";
     document.getElementById("desktopMenu-More-Options-Lock").className = "desktopMenu-More-Options-Lock-Open";
     document.getElementById("desktopMenu-More-Options-Settings").className = "desktopMenu-More-Options-Settings-Open";
+    document.getElementById("desktopMenu-More-Options-Dev").className = "desktopMenu-More-Options-Dev-Open";
     document.getElementById("desktopMenu-More-Options-Big").className = "desktopMenu-More-Options-Big-Open";
     console.log(document.getElementById("desktopMenu-More-Options-Big").className);
     $("#desktopMenu-More-Options-SignOut-Inner").html("Sign out");
@@ -453,6 +467,7 @@ function toggleMoreOptions() {
     document.getElementById("desktopMenu-More-Options-Power").className = "desktopMenu-More-Options-Power-Closed";
     document.getElementById("desktopMenu-More-Options-Lock").className = "desktopMenu-More-Options-Lock-Closed";
     document.getElementById("desktopMenu-More-Options-Settings").className = "desktopMenu-More-Options-Settings-Closed";/* Updated*/
+    document.getElementById("desktopMenu-More-Options-Dev").className = "desktopMenu-More-Options-Dev-Closed";
     document.getElementById("desktopMenu-More-Options-Big").className = "desktopMenu-More-Options-Big-Closed";
     console.log(document.getElementById("desktopMenu-More-Options-Big").className);
     $("#desktopMenu-More-Options-SignOut-Inner").html("");
@@ -461,14 +476,22 @@ function toggleMoreOptions() {
   navigator.bluetooth.getAvailability().then((available) => {
   if (available) {
     document.getElementById("Menu-Bluetooth-Status").innerHTML = "Availible";
+    document.getElementById("Menu-Bluetooth-Icon").style.backgroundColor = "#8ab4f8";
+    document.getElementById("Menu-Bluetooth-Icon").src = "img/bluetooth_white_24dp.svg";
   } else {
     document.getElementById("Menu-Bluetooth-Status").innerHTML = "Not Availible";
+    document.getElementById("Menu-Bluetooth-Icon").style.backgroundColor = "rgba(0, 0, 0, 0.25)";
+    document.getElementById("Menu-Bluetooth-Icon").src = "img/bluetooth_white_24dp.svg";
   }
 });
   if(navigator.onLine){
     document.getElementById("Menu-Wifi-SubStatus").innerHTML = "Connected";
+    document.getElementById("Menu-Wifi-Icon").style.backgroundColor = "#8ab4f8";
+    document.getElementById("Menu-Wifi-Icon").src = "img/signal_wifi_4_bar_white_24dp.svg";
   } else {
     document.getElementById("Menu-Wifi-SubStatus").innerHTML = "Not <br> Connected";
+    document.getElementById("Menu-Wifi-Icon").style.backgroundColor = "rgba(0, 0, 0, 0.25)";
+    document.getElementById("Menu-Wifi-Icon").src = "img/signal_wifi_bad_white_24dp.svg";
   }
 }
 
@@ -481,19 +504,139 @@ function toggleNightLight() {
     document.getElementById("nightLight").className = "night-light-on";
     document.getElementById("Menu-NightLight-SubStatus").innerHTML = "On " + nightLightNum + "%";
     document.getElementById("Menu-NightLight-Icon").src = "img/night_mode_white.svg";
+    document.getElementById("Menu-NightLight-Icon").style.backgroundColor = "#8ab4f8";
     nightLight = true;
   } else {
     //document.getElementById("nightLight").style.backdropfilter = "sepia(0)";
     document.getElementById("nightLight").className = "night-light-off";
     document.getElementById("Menu-NightLight-SubStatus").innerHTML = "Off";
     document.getElementById("Menu-NightLight-Icon").src = "img/day_mode_white.svg";
+    document.getElementById("Menu-NightLight-Icon").style.backgroundColor = "rgba(0, 0, 0, 0.25)";
     nightLight = false;
   }
+}
+
+var devConsole = false;
+function openDevConsole() {
+  document.getElementById("devConsole").style.display = "flex";
+  devConsole = true;
+}
+
+function closeDevConsole() {
+  document.getElementById("devConsole").style.display = "none";
+  devConsole = false;
+}
+
+var devInput = "";
+function devConsoleInput() {
+  document.getElementById("devText").innerHTML += ("<span class='echo'> - " + document.getElementById("devInput").value + "</span><br>");
+  devInput = document.getElementById("devInput").value;
+  if(devInput == "@help") {
+    devConsoleClear()
+    document.getElementById("devText").innerHTML += ("<span class='help'><b>--- Dev Console ---</b></span><br>");
+    document.getElementById("devText").innerHTML += ("<span class='help'>- @help </span><span class='help-more'> -> Prints the help list</span><br>");
+    document.getElementById("devText").innerHTML += ("<span class='help'>- @clear </span><span class='help-more'> -> Clears the dev console</span><br>");
+    document.getElementById("devText").innerHTML += ("<span class='help'>- @close </span><span class='help-more'> -> Closes the dev console</span><br>");
+    document.getElementById("devText").innerHTML += ("<span class='help'>- @creators </span><span class='help-more'> -> Prints the creators of this website</span><br>");
+    document.getElementById("devText").innerHTML += ("<span class='help'><b>--- Variables ---</b></span><br>");
+    document.getElementById("devText").innerHTML += ("<span class='help'>- #currentImg </span><span class='help-more'> -> Prints the current background image value</span><br>");
+    document.getElementById("devText").innerHTML += ("<span class='help'>- #devConsole </span><span class='help-more'> -> Prints the dev console visibility value</span><br>");
+    document.getElementById("devText").innerHTML += ("<span class='help'>- #searchApps </span><span class='help-more'> -> Prints the search apps visibility value</span><br>");
+    document.getElementById("devText").innerHTML += ("<span class='help'>- #nightLight </span><span class='help-more'> -> Prints the night light visibility value</span><br>");
+    document.getElementById("devText").innerHTML += ("<span class='help'>- #nightLightNum </span><span class='help-more'> -> Prints the night light number value</span><br>");
+    document.getElementById("devText").innerHTML += ("<span class='help'><b>--- Functions ---</b></span><br>");
+    document.getElementById("devText").innerHTML += ("<span class='help'>- openCalc() </span><span class='help-more'> -> Opens the calculator app</span><br>");
+    document.getElementById("devText").innerHTML += ("<span class='help'>- toggleSearchApps() </span><span class='help-more'> -> Toggles the search app window</span><br>");
+    document.getElementById("devText").innerHTML += ("<span class='help'>- logout() </span><span class='help-more'> -> Logs out of the chromebook</span><br>");
+    document.getElementById("devText").innerHTML += ("<span class='help'>- lock() </span><span class='help-more'> -> Locks the chromebook</span><br>");
+    document.getElementById("devText").innerHTML += ("<span class='help'>- openSettings() </span><span class='help-more'> -> Open the settings App</span><br>");
+    document.getElementById("devText").innerHTML += ("<span class='help'>- toggleSearchAppsBig() </span><span class='help-more'> -> Toggles search app big display</span><br>");
+    document.getElementById("devText").innerHTML += ("<span class='help'>- main() </span><span class='help-more'> -> Runs the main function</span><br>");
+    document.getElementById("devText").innerHTML += ("<span class='help'>- power() </span><span class='help-more'> -> Powers off the chromebook</span><br>");
+    document.getElementById("devText").innerHTML += ("<span class='help'>- reset() </span><span class='help-more'> -> Resets the chromebook</span><br>");
+    document.getElementById("devText").innerHTML += ("<span class='help'>- showDesk() </span><span class='help-more'> -> Shows the desktop shelf</span><br>");
+    document.getElementById("devText").innerHTML += ("<span class='help'>- hideDesk() </span><span class='help-more'> -> Hides the desktop shelf</span><br>");
+    document.getElementById("devText").innerHTML += ("<span class='help'>- autoHideShelf() </span><span class='help-more'> -> Toggle auto hide shelf</span><br>");
+  } else if(devInput == "@clear") {
+    devConsoleClear();
+  } else if(devInput == "@close") {
+    closeDevConsole();
+    devCommand();
+  } else if(devInput == "@creators") {
+    document.getElementById("devText").innerHTML += ("<span class='other'>--> Creators: Luke Nielsen (N4 Studios)</span><br>");
+  } else if(devInput == "@EASTER") {
+    document.getElementById("devText").innerHTML += ("<span class='other'>--> Spectron Industries is awsome!</span><br>");
+  } else if(devInput == "openCalc()") {
+    openCalc();
+    devCommand();
+    closeDevConsole();
+  } else if(devInput == "toggleSearchApps()") {
+    toggleSearchApps();
+    devCommand();
+  } else if(devInput == "#devConsole") {
+    devVar(devConsole);
+  } else if(devInput == "#searchApps") {
+    devVar(searchApps);
+  } else if(devInput == "logOut()") {
+    logOut();
+    devCommand();
+  } else if(devInput == "lock()") {
+    lock();
+    devCommand();
+  } else if(devInput == "openSettings()") {
+    openSettings();
+    devCommand();
+    closeDevConsole();
+  } else if(devInput == "toggleSearchAppsBig()") {
+    toggleSearchAppsBig();
+    devCommand();
+  } else if(devInput == "main()") {
+    main();
+    devCommand();
+  } else if(devInput == "power()") {
+    power();
+    devCommand();
+  } else if(devInput == "restart()") {
+    restart();
+    devCommand();
+  } else if(devInput == "showDesk()") {
+    showDesk();
+    devCommand();
+  } else if(devInput == "hideDesk()") {
+    hideDesk();
+    devCommand();
+  } else if(devInput == "autoHideShelf()") {
+    autoHideDesk();
+    devCommand();
+  } else if(devInput == "#currentImg") {
+    devVar(currentImg);
+  } else if(devInput == "#nightLight") {
+    devVar(nightLight);
+  } else if(devInput == "#nightLightNum") {
+    devVar(nightLightNum);
+  }
+  document.getElementById("devInput").value = "";
+}
+
+function devConsoleClear() {
+  document.getElementById("devText").innerHTML = "";
+}
+
+function devCommand() {
+  document.getElementById("devText").innerHTML += "<span class='success'>--> Successfull!</span><br>";
+}
+
+function devVar(variable) {
+  document.getElementById("devText").innerHTML += "<span class='variable'>--> Variable: [<b>" + variable + "</b>]</span><br>";
 }
 
 /* Power */
 function power() {
   window.close();
+}
+
+function restart() {
+  window.location.reload();
 }
 
 /* Sign Out */
@@ -518,6 +661,14 @@ function openSettings() {
 /* Open Settings */
 function closeSettings() {
   document.getElementById("settingsMain").style.display = "none";
+}
+
+function openCalc() {
+  document.getElementById("calc-app").style.display = "flex";
+}
+
+function closeCalc() {
+  document.getElementById("calc-app").style.display = "none";
 }
 
 /* Cookie funcions */
