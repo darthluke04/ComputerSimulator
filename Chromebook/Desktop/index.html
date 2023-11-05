@@ -53,6 +53,31 @@
       </table>
     </div>
     
+    <div id="calc-app">
+      <div class="calc-app-inner">
+        <div class="app-menu">
+          <p>Calculator</p>
+          <img class="app-menu-close" src="img/close_black_24dp.svg" onclick="closeCalc();">
+        </div>
+      </div>
+    </div>
+    
+    <div id="devConsole" class="dev-console">
+      <div class="dev-console-inner">
+        <div class="app-menu">
+          <p>Dev Console</p>
+          <img class="app-menu-close" src="img/close_black_24dp.svg" onclick="closeDevConsole();">
+        </div>
+        <div class="dev-text-container">
+          <p id="devText"><span class="help">--- Type <b><i>@help</i></b> to get help ---</span><br></p>
+        </div>
+        <div class="dev-input-container">
+          <input id="devInput" type="text" onchange="devConsoleInput();">
+          <h3 onclick="devConsoleClear();">Clear</h3>
+        </div>
+      </div>
+    </div>
+    
     <div id="settingsWallpaper" class="settings">
       <div id="windowMenu" class="window-Menu">
         <table>
@@ -67,7 +92,7 @@
             </td>
             <td id="settingsExit" class="settings-option" onmousedown="closeWallpaper();" onmouseover="svgHover('settingsExit')" onmousemove="svgLeave('settingsExit')">
               <!--<btn><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg></btn>!-->
-              <img id="settingsExit_img" src="img/close_black_24dp.svg">
+              <img id="settingsMinimize_img" src="img/minimize_black_24dp.svg">
             </td>
           </tr>
         </table>
@@ -856,7 +881,7 @@
       <div id="searchApps" class="searchApps-Closed">
         <div id="searchApps-Center" class="searchApps-Center">
           <br>
-          <img id="searchApps-Center-Drag" class="searchApps-Center-Drag" src="img/keyboard_arrow_up_white_24dp.svg">
+          <img id="searchApps-Center-Drag" class="searchApps-Center-Drag" src="img/keyboard_arrow_up_white_24dp.svg" onclick="toggleSearchAppsBig();">
           <div id="searchApps-Chrome" class="searchApps-Chrome">
             <img id="searchChromeApp" class="searchChromeApp" onclick="openApp('Chrome');" src="img/search_black_24dp.svg">
             <input id="searchChromeInput" class="searchChromeInput" type="input" onchange="googleSearch(this.value);">
@@ -887,25 +912,26 @@
           <div id="desktopMenu-More-Options-Power" class="desktopMenu-More-Options-Power-Closed" onclick="power();"></div>
           <div id="desktopMenu-More-Options-Lock" class="desktopMenu-More-Options-Lock-Closed" onclick="lock();"></div>
           <div id="desktopMenu-More-Options-Settings" class="desktopMenu-More-Options-Settings-Closed" onclick="openSettings(); toggleMoreOptions();"></div>
+          <div id="desktopMenu-More-Options-Dev" class="desktopMenu-More-Options-Dev-Closed" onclick="openDevConsole(); toggleMoreOptions();"></div>
           <div id="desktopMenu-More-Options-Big" class="desktopMenu-More-Options-Big-Open">
             <div class="desktopMenu-More-Options-Big-Inner">
               <div class="desktopMenu-More-Options-Big-Row">
                 <div class="desktopMenu-More-Options-Big-Item">
-                  <img src="img/signal_wifi_4_bar_white_24dp.svg">
+                  <img id="Menu-Wifi-Icon" src="img/signal_wifi_4_bar_white_24dp.svg">
                   <div>
                     <p id="Menu-Wifi-Status">Wifi</p>
                     <p id="Menu-Wifi-SubStatus" class="subtitle">Not Connected</p>
                   </div>
                 </div>
                 <div class="desktopMenu-More-Options-Big-Item">
-                  <img src="img/bluetooth_white_24dp.svg">
+                  <img id="Menu-Bluetooth-Icon" src="img/bluetooth_white_24dp.svg">
                   <div>
                     <p id="Menu-Bluetooth-Status">Bluetooth</p>
                     <!-- <p class="subtitle">Off</p> !-->
                   </div>
                 </div>
                 <div class="desktopMenu-More-Options-Big-Item">
-                  <img src="img/">
+                  <img src="img/donotdisturb.svg">
                   <div>
                     <p>Notifications</p>
                     <p class="subtitle">Do not disterb</p>
@@ -915,25 +941,38 @@
 
               <div class="desktopMenu-More-Options-Big-Row">
                 <div class="desktopMenu-More-Options-Big-Item">
-                  <img src="img/">
+                  <img src="img/screencapture.svg">
                   <div>
                     <p>Screen <br> Capture</p>
                   </div>
                 </div>
                 <div class="desktopMenu-More-Options-Big-Item">
-                  <img src="img/">
+                  <img src="img/nearbyvisibility.svg">
                   <div>
                     <p>Nearby Visibility</p>
                     <p class="subtitle">Off</p>
                   </div>
                 </div>
                 <div class="options-circ-btn desktopMenu-More-Options-Big-Item">
-                  <img id="Menu-NightLight-Icon" src="img/dark_mode_white.svg" onclick="toggleNightLight();">
+                  <img id="Menu-NightLight-Icon" src="img/day_mode_white.svg" onclick="toggleNightLight();">
                   <div class="">
                     <p>Night Light</p>
                     <p id="Menu-NightLight-SubStatus" class="subtitle">Off</p>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="desktopMenu-More-Options-Range">
+            <div class="desktopMenu-More-Options-Range-Inner">
+              <div class="desktopMenu-More-Options-Range-Row">
+                <img src="img/volume.svg">
+                <input type="range" value=50 min=0 max=100/>
+              </div>
+              <div class="desktopMenu-More-Options-Range-Row">
+                <img src="img/volume.svg">
+                <input type="range" value=50 min=0 max=100/>
               </div>
             </div>
           </div>
